@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+    {% block css %}{% endblock %}
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="landing-page.css" rel="stylesheet">
+    <link href="startbootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+
+    /* Warna Background */
+    .merah{
+        background-color: #b00707;
+    }
+
+    /* Warna Font*/
+    .putih{
+        color: #ffffff;
+    }
+
+    .border{
+        border-style: dashed;
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top merah" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TenoMed</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Our Collection of Templates &amp; Themes">Home <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/template-categories/all"><i class="fa fa-globe fa-fw"></i> All Templates &amp; Themes</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/popular"><i class="fa fa-star fa-fw"></i> Most Popular</a>
+                        </li>
+                        <li>
+                            <a href="/buy-bootstrap-templates"><i class="fa fa-shopping-cart fa-fw"></i> Buy Bootstrap Templates</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">
+                            Template &amp; Theme Categories:
+                        </li>
+                        <li>
+                            <a href="/template-categories/admin-dashboard">Admin and Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/full-websites">Full Websites</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/landing-pages">Landing Pages</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/one-page">One Page Websites</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/portfolios">Portfolios</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/blogs">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/ecommerce">Ecommerce</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/unstyled">Unstyled Starter Templates</a>
+                        </li>
+                        <li>
+                            <a href="/template-categories/navigation-menus">Navigation and Navbars</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="http://startbootstrap.tumblr.com/" title="The Official Start Bootstrap Blog">Blog</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Bootstrap Related Resources">Resources <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/bootstrap-resources"><i class="fa fa-list fa-fw"></i> Bootstrap Resources List</a>
+                        </li>
+                        <li>
+                            <a href="/showcase"><i class="fa fa-desktop fa-fw"></i> Start Bootstrap Showcase</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/help" title="Help with Start Bootstrap Templates &amp; Themes">Help</a>
+                </li>
+                <li>
+                    <a href="/contact" title="Contact the Start Bootstrap Team">Contact</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#searchModal"><i class="fa fa-fw fa-search"></i> <span class="hidden-lg hidden-md hidden-sm">Search Themes</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+    
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+        {% block footer %}
+        {% endblock %}
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="searchModalLabel">Cari Tempat :</h4>
+            </div>
+            <div class="modal-body">
+                <form action="get" id="site_search">
+                    <div class="input-group">
+                        <input class="form-control" type="text" id="search_box">
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+                <ul style="display: block; margin-top: 15px;" id="search_results"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- jQuery -->
+    <script src="jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap.min.js"></script>
+
+</body>
+
+</html>
