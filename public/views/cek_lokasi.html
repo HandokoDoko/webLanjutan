@@ -11,7 +11,7 @@
       }
       #map {
         height: 80%;
-        width: 60%;
+        width: 90%;
         margin: auto;
       }
       #pilihan{
@@ -40,7 +40,7 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           mapTypeControl: false,
           center: {lat: 3.594755, lng: 98.672419},
-          zoom: 13
+          zoom: 17
         });
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -48,7 +48,7 @@
 
        
 	    //origin_place_id = place.place_id;
-	    route("ChIJQ2lmq7ExMTARPMDm3j_nGWk", "ChIJmbe7_Mo2MTARxpIOmnPC2C0", google.maps.TravelMode.WALKING, directionsService, directionsDisplay);
+	    route("ChIJQ2lmq7ExMTARPMDm3j_nGWk", "ChIJmbe7_Mo2MTARxpIOmnPC2C0", google.maps.TravelMode.TRANSIT, directionsService, directionsDisplay);
 	    map.setZoom(17);
 
         var origin_input = document.getElementById('origin-input');
