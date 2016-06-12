@@ -20,7 +20,10 @@
     </style>
   </head>
   <body>
-
+  	<div class="head" align="center" style="text-align: center;">
+  		<h1>Kopi Sadis</h1>
+  		<h3>Dari STMIK-STIE Mikroskil Medan --> Kopi Sadis, Medan-Tembung</h3>
+  	</div>
     <div id="map"></div>
 
 
@@ -43,6 +46,11 @@
         var directionsDisplay = new google.maps.DirectionsRenderer;
         directionsDisplay.setMap(map);
 
+       
+	    //origin_place_id = place.place_id;
+	    route("ChIJQ2lmq7ExMTARPMDm3j_nGWk", "ChIJmbe7_Mo2MTARxpIOmnPC2C0", google.maps.TravelMode.WALKING, directionsService, directionsDisplay);
+	    map.setZoom(17);
+
         var origin_input = document.getElementById('origin-input');
         var destination_input = document.getElementById('destination-input');
         var modes = document.getElementById('mode-selector');
@@ -56,6 +64,7 @@
         var destination_autocomplete =
             new google.maps.places.Autocomplete(destination_input);
         destination_autocomplete.bindTo('bounds', map);
+
 
         // Sets a listener on a radio button to change the filter type on Places
         // Autocomplete.
@@ -75,6 +84,7 @@
             map.fitBounds(place.geometry.viewport);
           } else {
             map.setCenter(place.geometry.location);
+            console.log(place.geometry.location);
             map.setZoom(17);
           }
         }
@@ -129,24 +139,24 @@
       }
     </script>
 
-  <div class="pilihan">
-    <input id="origin-input" class="controls" type="text"
-        placeholder="Enter an origin location">
+<!--   <div class="pilihan">
+  <input id="origin-input" class="controls" type="text"
+      placeholder="Enter an origin location">
 
-    <input id="destination-input" class="controls" type="text"
-        placeholder="Enter a destination location">
+  <input id="destination-input" class="controls" type="text"
+      placeholder="Enter a destination location">
 
-    <div id="mode-selector" class="controls">
-      <input type="radio" name="type" id="changemode-walking" checked="checked">
-      <label for="changemode-walking">Walking</label>
+  <div id="mode-selector" class="controls">
+    <input type="radio" name="type" id="changemode-walking" checked="checked">
+    <label for="changemode-walking">Walking</label>
 
-      <input type="radio" name="type" id="changemode-transit">
-      <label for="changemode-transit">Transit</label>
+    <input type="radio" name="type" id="changemode-transit">
+    <label for="changemode-transit">Transit</label>
 
-      <input type="radio" name="type" id="changemode-driving">
-      <label for="changemode-driving">Driving</label>
-    </div>
+    <input type="radio" name="type" id="changemode-driving">
+    <label for="changemode-driving">Driving</label>
   </div>
+</div> -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA &libraries=places&callback=initMap"
         async defer></script>
