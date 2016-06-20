@@ -4,7 +4,7 @@
 <head>
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/rubick_pres.css" rel="stylesheet"/>
-	<title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         <!-- use rapido -->
         <!-- start: MAIN CSS -->
         <link href='http:fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,200,100,800' rel='stylesheet' type='text/css'>
@@ -196,6 +196,10 @@
                 padding: 14px 10px;
             }
 
+            .bg-biru-muda{
+                background-color: #076360;
+            }
+
             @media (max-width: 1200px){
                 .section-contact-3 .contact-container .address-container{
                     height: 520px;
@@ -205,10 +209,53 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" role="navigation">
-            
-	  {% block header %}
-		{% endblock %}
+        <nav class="navbar navbar-default navbar-transparent navbar-fixed-top bg-biru-muda" role="navigation">
+
+            <div class="container">
+                <div class="navbar-header">
+                    <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                    </button>
+                    <a target="_blank" href="#" class="navbar-brand">
+                    TenoMed
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" >
+                    <ul class="nav navbar-nav navbar-right navbar-uppercase">
+<!--                         <li class="social-links">
+    <a href="https://www.facebook.com/certivyTim">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    <a href="https://twitter.com/certivyTim">
+        <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://plus.google.com/+certivytimPage">
+        <i class="fa fa-google-plus-square"></i>
+    </a>
+    <a href="https://dribbble.com/certivytim">
+        <i class="fa fa-dribbble"></i>
+    </a>
+
+</li> -->
+
+                        <li>
+                            <a href="#" data-scroll="true" data-id="#projects">
+                            Daftar Tempat
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-scroll="true" data-id="#team">
+                            Team
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+
         </nav>
         <div class="wrapper">
         
@@ -216,11 +263,11 @@
                 <div class="parallax pattern-image" style="background: rgb(255, 143, 94) none repeat scroll 0% 0%;">
 <!--                    <img src="https:ununsplash.imgix.net/photo-1427434846691-47fc561d1179?fit=crop&amp;fm=jpg&amp;h=700&amp;q=75&amp;w=1050"/>
                      <img src="/img/header6.jpg"/> -->
-                    <div class="container">
+                    <div class="container bg-biru-muda">
                         <div class="content">
                                 <div>
-                                    <h1>Certivy</h1>
-                                    <h5>The Best Application ever made in the world for your certificate validation</h5>      
+                                    <h1>TENO MED</h1>
+                                    <h5>Tempat Nongkrong Medan, Cari tempat hangout yang anda inginkan bersama Keluarga, Sahabat, Pasangan.</h5>      
                                 </div>
                         </div>
                     </div>
@@ -229,20 +276,10 @@
                 <i class="fa fa-angle-down"></i>
                 </a>
             </div>
-
-            <div class="section section-we-do-2" id="workflow">
-                {% block workflow %}
-        	{% endblock %}
-            </div>
-
-            <div class="section section-we-are-1" id="whoWeAre">
-                {% block whoWeAre %}
-        	{% endblock %}
-            </div>
             
             <div class="section section-we-made-3" id="projects">
                 {% block projects %}
-        	{% endblock %}
+                {% endblock %}
             </div>
           
             <div class="section section-team-2" id="team">

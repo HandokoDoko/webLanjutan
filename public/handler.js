@@ -5,14 +5,18 @@ var moment = require('moment'),
 home = function(req, res){
 	res.render('home.html');
 };
-cek_lokasi = function(req, res){
-	res.render('cek_lokasi.html');
+detail_tempat = function(req, res){
+	res.render('detail_tempat.html');
+};
+lihat_peta = function(req, res){
+	res.render('lihat_peta_tempat.html');
 };
 
 
 handler = {
 	home: home,
-	cek_lokasi: cek_lokasi
+	detail_tempat: detail_tempat,
+	lihat_peta: lihat_peta
 };
 
 module.exports = handler;

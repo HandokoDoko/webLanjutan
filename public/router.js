@@ -5,7 +5,8 @@ var express = require('express'),
 
 router = function(app){
 	r.get('/', h.home);
-	r.get('/cek_lokasi', h.cek_lokasi);
+	r.get('/detail_tempat', h.detail_tempat);
+	r.get('/lihat_peta', h.lihat_peta);
 	app.use(r);
 };
 module.exports = router;
