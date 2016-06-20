@@ -5,7 +5,7 @@
 function initMap() {
   var origin_place_id = null;
   var destination_place_id = null;
-  var travel_mode = google.maps.TravelMode.WALKING;
+  var travel_mode = google.maps.TravelMode.DRIVING;
   var map = new google.maps.Map(document.getElementById("map"), {
     mapTypeControl: false,
     center: {lat: 3.597608, lng: 98.750229},
@@ -21,12 +21,19 @@ function initMap() {
   var directionsDisplay = new google.maps.DirectionsRenderer;
   directionsDisplay.setMap(map);
 
+  var angkot = document.querySelector("button#angkot");
+  angkot.addEventListener("click", function(){
+    travel_mode = google.maps.TravelMode.TRANSIT;
+    route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", travel_mode, directionsService, directionsDisplay);
+  });
+
 //origin_place_id = place.place_id;
 /*route("ChIJQ2lmq7ExMTARPMDm3j_nGWk", "ChIJmbe7_Mo2MTARxpIOmnPC2C0", google.maps.TravelMode.TRANSIT, directionsService, directionsDisplay);
 map.setZoom(17);
 */
   var origin_input = document.getElementById('origin-input');
-  var destination_input = document.getElementById('destination-input');
+  //var destination_input = document.getElementById('destination-input');
+  
   //var modes = document.getElementById('mode-selector');
 
   //map.controls[google.maps.ControlPosition.TOP_LEFT].push(origin_input);
@@ -36,8 +43,8 @@ map.setZoom(17);
   var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
   origin_autocomplete.bindTo('bounds', map);
 
-  var destination_autocomplete = new google.maps.places.Autocomplete(destination_input);
-  destination_autocomplete.bindTo('bounds', map);
+/*  var destination_autocomplete = new google.maps.places.Autocomplete(destination_input);
+  destination_autocomplete.bindTo('bounds', map);*/
 
 
   // Sets a listener on a radio button to change the filter type on Places
@@ -76,7 +83,7 @@ map.setZoom(17);
     // If the place has a geometry, store its place ID and route if we have
     // the other place ID
     origin_place_id = place.place_id;
-    route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", google.maps.TravelMode.TRANSIT, directionsService, directionsDisplay);
+    route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", travel_mode, directionsService, directionsDisplay);
     map.setZoom(17);
     marker.setMap(null);
     //route(origin_place_id, destination_place_id, travel_mode, directionsService, directionsDisplay);
