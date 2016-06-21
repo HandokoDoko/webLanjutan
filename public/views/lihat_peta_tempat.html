@@ -20,6 +20,12 @@
         .controls{
             width: 100%;
         }
+        #warnings-panel {
+            width: 100%;
+            height:10%;
+            text-align: center;
+        }
+
     </style>
     {% endblock %}
 
@@ -33,6 +39,24 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">MAPS</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div id="map">
+                                        MAPS
+                                    </div>
+                                    &nbsp;
+                                    <div id="warnings-panel"></div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+
                     <div class="col-md-6">
                         <div class="panel panel-default">
                           <div class="panel-heading">ANDA DARI MANA ?</div>
@@ -67,34 +91,13 @@
                                             <button class="list-group-item" id="kendaraan_pribadi">KENDARAAN PRIBADI</button>
                                             <button class="list-group-item" id="bersepeda">BERSEPEDA</button>
                                         </div>
-<!--                                         <div class="info">
-    <h5>Anda dapat menemukan lokasi dan menggunakan mode yang anda inginkan</h5>
-</div>
-<div id="pilihan">
-    <button class="btn btn-primary">ANGKUTAN UMUM</button>
-    <button class="btn btn-primary">KRETA API</button>
-    <button class="btn btn-primary">KENDARAAN PRIBADI</button>
-    <button class="btn btn-primary">BERSEPEDA</button>
-</div> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                          <div class="panel-heading">MAPS</div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div id="map">
-                                        MAPS
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
