@@ -31,11 +31,12 @@ function initMap() {
 
   directionsDisplay.setMap(map);
 
-  var angkot = document.querySelector("button#angkot");
-  angkot.addEventListener("click", function(){
+  //var angkot = document.querySelector("button#angkot");
+
+/*  angkot.addEventListener("click", function(){
     travel_mode = google.maps.TravelMode.TRANSIT;
     route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", travel_mode, directionsService, directionsDisplay);
-  });
+  });*/
 
 //origin_place_id = place.place_id;
 /*route("ChIJQ2lmq7ExMTARPMDm3j_nGWk", "ChIJmbe7_Mo2MTARxpIOmnPC2C0", google.maps.TravelMode.TRANSIT, directionsService, directionsDisplay);
@@ -60,14 +61,22 @@ map.setZoom(17);
   // Sets a listener on a radio button to change the filter type on Places
   // Autocomplete.
   function setupClickListener(id, mode) {
-    var radioButton = document.getElementById(id);
-    var place = destination_autocomplete.getPlace();
+    var pilihan = document.querySelector(id);
+    var place = origin_autocomplete.getPlace();
     
-    radioButton.addEventListener('click', function() {
+    pilihan.addEventListener('click', function() {
       travel_mode = mode;
-      console.log(origin_place_id);
+      route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
+
+      console.log(origin_place_id + place);
     });
   }
+
+  setupClickListener('button#angkot', google.maps.TravelMode.TRANSIT);
+  setupClickListener('button#kendaraan_pribadi', google.maps.TravelMode.DRIVING);
+/*  setupClickListener('button#kreta_api', google.maps.TravelMode.WALKING);
+  setupClickListener('button#bersepeda', google.maps.TravelMode.BICYCLING);*/
+
 /*  setupClickListener('changemode-walking', google.maps.TravelMode.WALKING);
   setupClickListener('changemode-transit', google.maps.TravelMode.TRANSIT);
   setupClickListener('changemode-driving', google.maps.TravelMode.DRIVING);*/
