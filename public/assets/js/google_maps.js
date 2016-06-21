@@ -150,19 +150,30 @@ map.setZoom(17);
     // For each step, place a marker, and add the text to the marker's infowindow.
     // Also attach the marker to an array so we can keep track of it and remove it
     // when calculating new routes.
+    var dataArah = [];
     var myRoute = directionResult.routes[0].legs[0];
     for (var i = 0; i < myRoute.steps.length; i++) {
       var marker = markerArray[i] = markerArray[i] || new google.maps.Marker;
       marker.setMap(map);
       marker.setPosition(myRoute.steps[i].start_location);
-      attachInstructionText(
-          stepDisplay, marker, myRoute.steps[i].instructions, map);
-      //alert(myRoute.steps[i].start_location);
-      var dataArah = [];
       dataArah[i] = myRoute.steps[i].instructions;
+      attachInstructionText(stepDisplay, marker, myRoute.steps[i].instructions, map);
+      //alert(myRoute.steps[i].start_location);
       //jalur.innerHTML = newElement.childNodes[0].data;
     }
-    console.log(dataArah);
+    var wr_panel = document.getElementById('warnings-panel');
+
+    var tampil = "";
+    for (var i = 0; i < dataArah.length; i++) {
+      tampil +="<br>"+"<b>"+(i+1)+". </b>"+dataArah[i];
+/*      var newChat = document.createElement("li"),
+          newText = document.createTextNode(dataArah[i]);
+
+      newChat.appendChild(newText);
+      wr_panel.appendChild(newChat);*/
+    }
+    wr_panel.innerHTML = "<h3>Petunjuk Arah :</h3>"+tampil;
+    console.log(dataArah.length+"\n"+tampil);
   }
 
   function attachInstructionText(stepDisplay, marker, text, map) {
@@ -171,7 +182,6 @@ map.setZoom(17);
     // of the step.
     stepDisplay.setContent(text);
     stepDisplay.open(map, marker);
-    alert(text);
   });
 }
 }
