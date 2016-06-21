@@ -5,11 +5,27 @@
     {% block mapcss %}
     <style type="text/css">
         #map {
-            position: relative;
-            height: 80%;
-            width: 90%;
+            height: 500px;
+            width: 100%;
             margin: auto;
+            background-color: #222;
+            color: red;
         }
+
+        .kontrol{
+            width: 90%;
+            margin: 10px;
+        }
+
+        .controls{
+            width: 100%;
+        }
+        #warnings-panel {
+            width: 100%;
+            height:10%;
+            text-align: left;
+        }
+
     </style>
     {% endblock %}
 
@@ -23,46 +39,65 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row carousel-holder">
+
                     <div class="col-md-12">
                         <div class="panel panel-default">
                           <div class="panel-heading">MAPS</div>
                             <div class="panel-body">
                                 <div class="row">
                                     <div id="map">
-                                        Dari Sananya
+                                        MAPS
                                     </div>
+                                    &nbsp;
+                                    <div id="warnings-panel"></div>
                                 </div>
                             </div>
                           </div>
                         </div>
                     </div>
 
-                    <div class="col-md-12">
+
+                    <div class="col-md-6">
                         <div class="panel panel-default">
-                          <div class="panel-heading">PILIHAN</div>
+                          <div class="panel-heading">ANDA DARI MANA ?</div>
                             <div class="panel-body">
                                 <div class="row">
-                                    <div id="pilihan">
-                                      <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
-
-                                      <input id="destination-input" class="controls" type="text"
-                                          placeholder="Enter a destination location">
-
-                                      <div id="mode-selector" class="controls">
-                                        <input type="radio" name="type" id="changemode-walking" checked="checked">
-                                        <label for="changemode-walking">Walking</label>
-
-                                        <input type="radio" name="type" id="changemode-transit">
-                                        <label for="changemode-transit">Transit</label>
-
-                                        <input type="radio" name="type" id="changemode-driving">
-                                        <label for="changemode-driving">Driving</label>
-                                      </div>
+                                    <div class="kontrol">
+                                        <div class="info">
+                                            <h5>Anda dapat temukan rute ke lokasi tujuan denggan menginput lokasi anda pada form dibawah ini !</h5>
+                                        </div>
+                                        <div id="pilihan">
+                                            Dari :
+                                            <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
+                                            <br>Ke : <b>Kopi Sadis, Medan-Tembung. Jl. Nusantara</b>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">MENGUNAKAN</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="kontrol">
+
+                                        <h5>Anda dapat menemukan lokasi dan menggunakan mode yang anda inginkan</h5>
+                                        <div class="list-group">
+                                            <button class="list-group-item" id="kendaraan_pribadi">KENDARAAN PRIBADI</button>
+                                            <button class="list-group-item" id="angkot">ANGKUTAN UMUM</button>
+<!--                                             <button class="list-group-item" id="kreta_api">KRETA API</button>
+<button class="list-group-item" id="bersepeda">BERSEPEDA</button> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -71,6 +106,6 @@
     {% endblock %}
 
     {% block js %}
-    <script src="js/google_maps.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA&libraries=places&callback=initMap" async defer></script>
+<script src="js/google_maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA&libraries=places&callback=initMap" async defer></script>
     {% endblock %}
