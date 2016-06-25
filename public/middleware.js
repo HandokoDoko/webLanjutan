@@ -2,7 +2,7 @@ var router = require('./router'),
 	//bodyParser = require('body-parser'),
 	nunjucks = require('nunjucks'),
 	express = require('express'),
-	//session = require('express-session'),
+	session = require('express-session'),
 	//uuid = require('uuid'),
 	//RedisStore = require('connect-redis')(session),
 	//redisClient = require('redis').createClient(),
@@ -12,7 +12,7 @@ var router = require('./router'),
 middleware = function(app){
 	//app.use(express.static('public'));
 	//app.use(bodyParser.urlencoded({extended: true}));
-/*	app.use(session({
+	app.use(session({
 		store: new RedisStore({
 			client: redisClient,
 			host: '127.0.0.1',
@@ -22,7 +22,7 @@ middleware = function(app){
 			return uuid.v1();
 		},
 		secret: "Secret String"
-	}));*/
+	}));
 	router(app);
 	nunjucks.configure('templates',{
 		autoescape: true,

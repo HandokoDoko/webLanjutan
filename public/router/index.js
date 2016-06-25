@@ -2,7 +2,7 @@ var admin = require('./admin'),
 	user = require('./user');
 
 var router = function(app){
-	//admin(app);
+	admin(app);
 	user(app);
 };
 
