@@ -1,4 +1,4 @@
-{% extends "base_tempat.html" %}
+{% extends "./base_tempat.html" %}
     {% block title %}
         Kopi Sadis
     {% endblock %}
@@ -85,6 +85,7 @@
                                     <div class="kontrol">
 
                                         <h5>Anda dapat menemukan lokasi dan menggunakan mode yang anda inginkan</h5>
+                                        <h2>{{ data[1].tujuan }}</h2>
                                         <div class="list-group">
                                             <button class="list-group-item" id="kendaraan_pribadi">KENDARAAN PRIBADI</button>
                                             <button class="list-group-item" id="angkot">ANGKUTAN UMUM</button>
