@@ -1,6 +1,6 @@
 var express = require('express'),
 	r = express.Router(),
-	h = require('./handler'),
+	h = require('../handler').user,
 	router;
 
 router = function(app){
