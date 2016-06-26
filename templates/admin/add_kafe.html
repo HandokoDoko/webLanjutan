@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Data Kafe</title>
+	<script src="../js/jquery-1.11.2.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="../js/alamat_dengan_maps.js"></script>
+	<style type="text/css">
+	#myMap{
+		height: 400px;
+		width: 50%;
+	}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Nama Cafe / Usaha</td>
+			<td>:</td>
+			<td><input type="text" id="nama" name="nama"></td>
+		</tr>
+		<tr>
+			<td>Deskripsi Cafe / Usaha</td>
+			<td>:</td>
+			<td><input type="date" name="date"></td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td>:</td>
+			<td>
+	            <input id="address" disabled  type="text"/>
+	            Lat: <input disabled type="text" name="lat" id="latitude" placeholder="Latitude"/>
+	            Lng: <input disabled type="text" name="lng" id="longitude" placeholder="Longitude"/>
+            </td>
+		</tr>
+		<tr>
+			<td>Foto Profil Usaha Anda</td>
+			<td>:</td>
+			<td><button id="addImage">+</button></td>
+		</tr>
+	</table>
+
+    <p>Pilih lokasi Anda!</p>
+    <div id="myMap"></div><br/>
+	
+</body>
+</html>

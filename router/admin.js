@@ -5,6 +5,7 @@ var express = require('express'),
 
 router = function(app){
 	r.get('/admin', h.index);
+	r.get('/admin/data_kafe', h.add_kafe);
 	app.use(r);
 };
 module.exports = router;
