@@ -24,30 +24,7 @@ lihat_peta = function(req, res){
 	res.render('./user/lihat_peta_tempat.html', {data: data});
 };
 
-result = function(req, res){
-	var username = req.body.username;
-	var pass = req.body.password;
-	var realPass;
-	res.sendStatus(401);
-	User.where('username',username).fetch()
-	.then(function(user){
-		realPass = user.get('password');
-		if (pass===realPass){
-			req.session.user = username;
-			if(username==="admin"){
-				req.session.admin = true;
-			}
-			res.redirect('/admin');
-		}else{
-			res.sendStatus(401);
-		};
-	}).catch(function(err){
-		req.session.admin = true;
-		res.redirect('/admin');
-		console.log(err);
-		res.sendStatus(401);
-	}); 
-}; 
+
 
 
 handler = {
