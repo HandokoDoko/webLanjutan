@@ -4,8 +4,7 @@ var express = require('express'),
 	router;
 
 router = function(app){
-	r.get('/admin', h.login);
-	r.post('/check', h.check);
+	r.get('/admin', h.index);
 	app.use(r);
 };
 module.exports = router;
