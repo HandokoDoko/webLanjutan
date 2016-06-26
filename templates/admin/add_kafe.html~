@@ -20,11 +20,10 @@
 			<td>:</td>
 			<td><input type="text" id="nama" name="nama"></td>
 		</tr>
-
 		<tr>
 			<td>Deskripsi Cafe / Usaha</td>
 			<td>:</td>
-			<td><textarea placeholder="Default Text" id="form-field-22" class="form-control"></textarea></td>
+			<td><input type="date" name="date"></td>
 		</tr>
 		<tr>
 			<td>Alamat</td>
