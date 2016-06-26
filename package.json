@@ -4,9 +4,11 @@
   "description": "Blog sederhana menggunakan nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "author": "Hardy",
+  "author": "tenomed",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.1",
@@ -21,9 +23,12 @@
     "passport": "^0.3.2",
     "path": "^0.12.7",
     "sqlite3": "^3.1.4",
-    "uuid": "^2.0.2"
+    "uuid": "^2.0.2",
+    "mongodb": "^2.1.4",
+    "ejs": "^2.3.4"
   },
   "devDependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+     "nodemon": "^1.8.1"
   }
 }

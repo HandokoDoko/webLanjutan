@@ -18,6 +18,7 @@ check = function(req, res, next){
 	if(username === "admin"){
 		if(pass === "admin"){
 			req.session.admin = true;
+			res.re
 		}
 	}
 	/*res.sendStatus(401);
