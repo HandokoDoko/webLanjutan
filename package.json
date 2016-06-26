@@ -1,0 +1,29 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog sederhana menggunakan nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hardy",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "bookshelf": "^0.9.5",
+    "connect-redis": "^3.0.2",
+    "cookie-parser": "^1.4.2",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "knex": "^0.11.3",
+    "nunjucks": "^2.4.2",
+    "nunjucks-date-filter": "^0.1.1",
+    "passport": "^0.3.2",
+    "path": "^0.12.7",
+    "sqlite3": "^3.1.4",
+    "uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

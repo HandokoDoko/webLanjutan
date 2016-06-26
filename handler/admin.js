@@ -1,5 +1,4 @@
 var moment = require('moment'),
-	auth = require('../auth'),
 	handler, 
 	login,
 	check;
@@ -8,16 +7,20 @@ index = function(req, res){
 	res.render('./admin/index.html');
 };
 
-login = function(req, res, next){
-	auth;
+login = function(req, res){
 	res.render('./admin/login.html');
 };
 
-check = function(req, res){
+check = function(req, res, next){
 	var username = req.body.username;
 	var pass = req.body.password;
 	var realPass;
-	res.sendStatus(401);
+	if(username === "admin"){
+		if(pass === "admin"){
+			req.session.admin = true;
+		}
+	}
+	/*res.sendStatus(401);
 	User.where('username',username).fetch()
 	.then(function(user){
 		realPass = user.get('password');
@@ -35,7 +38,7 @@ check = function(req, res){
 		res.redirect('/admin');
 		console.log(err);
 		res.sendStatus(401);
-	}); 
+	}); */
 }; 
 
 handler = {
