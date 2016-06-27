@@ -60,3 +60,7 @@
 	-> id_kafe (FK)
 	-> wifi (varchar(30))
 	-> layanan_lainnya(text)
+
+#Account mongoLab
+user: alpandi95
+pass: Pandi1995
