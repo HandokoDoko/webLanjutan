@@ -3428,7 +3428,7 @@ body.login .new-account {
 }
 
 .horizontal-menu-fixed .main-container {
-  margin-top: 35px !important;
+  margin-top: 76px !important;
 }
 
 .header-default.horizontal-menu-fixed .main-container {
