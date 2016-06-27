@@ -8,19 +8,16 @@ var router = require('./router'),
 	middleware;
 
 middleware = function(app){
-	//localStoreage = new LocalStoreage('./scratch');
 	app.use(express.static('public'));
-	app.use(function(err, req, res, next) {
-	  // Do logging and user-friendly error message display
-	  console.error(err);
-	  res.status(500).send();
-	});
+	
 	app.use(bodyParser.urlencoded({extended: true}));
 	app.use(session({
 		genid: function(req){
 			return uuid.v1();
 		},
-		secret: "Secret String"
+		secret: "Secret String",
+		resave: true,
+    	saveUninitialized: true
 	}));
 	router(app);
 	
