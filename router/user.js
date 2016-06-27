@@ -5,7 +5,8 @@ var express = require('express'),
 
 router = function(app){
 	r.get('/', h.home);
-	r.get('/detail_tempat', h.detail_tempat);
+	r.get('/detail_tempat', h.data_kafe);
+	r.get('/detail_tempat/:id', h.view_cafe);
 	r.get('/lihat_peta', h.lihat_peta);
 	r.get('/login',h.login);
 
