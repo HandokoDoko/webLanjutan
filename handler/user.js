@@ -19,9 +19,30 @@ home = function(req, res){
 		res.render('./user/home.html', {datas: result})
 	})
 };
-detail_tempat = function(req, res){
-	res.render('./user/detail_tempat.html');
+data_kafe = function(req, res){
+	console.log("Dapatkan semua tempat");
+	db.collection('data').find().toArray(function(err, result){
+		if(err){
+			res.send("Error Occurent");
+		}else{
+			res.json(result);
+		}
+	})/*
+	res.render('./user/detail_tempat.html');*/
 };
+
+view_cafe = function(req, res){
+	console.log("Dapatkan 1 tempat");
+	db.collection('data').find({_id: req.params.id})
+		.toArray(function(err, result){
+			if (err) {
+				console.log(err);
+			}else{
+				res.json(result);
+			}
+		})
+};
+
 lihat_peta = function(req, res){
 	var data = [
 		{
@@ -64,10 +85,11 @@ check = function(req, res){
 
 handler = {
 	home: home,
-	detail_tempat: detail_tempat,
+	data_kafe: data_kafe,
 	lihat_peta: lihat_peta,
 	login: login,
-	check: check
+	check: check,
+	view_cafe: view_cafe
 };
 
 module.exports = handler;
