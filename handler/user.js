@@ -1,10 +1,23 @@
 var moment = require('moment'),
+	MongoClient = require('mongodb').MongoClient,
+	mongoose=require("mongoose"),
+	Kafe = require('../model').kafe,
+	db,
 	user,
 	handler,
 	home;
 
+
+MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', (err, database) => {
+  	if (err) return console.log(err)
+  	db = database;
+})
+
 home = function(req, res){
-	res.render('./user/home.html');
+	db.collection('data').find().toArray((err, result)=>{
+		if(err)return console.log(err);
+		res.render('./user/home.html', {datas: result})
+	})
 };
 detail_tempat = function(req, res){
 	res.render('./user/detail_tempat.html');
