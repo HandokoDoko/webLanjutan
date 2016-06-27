@@ -20,10 +20,10 @@ router = function(app){
 	r.post('/admin/tambah_kafe',
 		(req, res) => {
 			db.collection('data').save(req.body,(err, result) => {
-				if (err) return console.log(err)
+				if (err) return console.log(err);
 				//renders index.ejs
-				console.log('saved to database')
-				res.redirect('/admin')
+				console.log('saved to database');
+				res.redirect('/admin');
 			})
 /*
 			var newKafe = new Kafe();
