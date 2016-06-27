@@ -93,7 +93,7 @@
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
-										<a href="login_login.html">
+										<a href="/logout">
 											Log Out
 										</a>
 									</li>
@@ -180,7 +180,7 @@
 											</a>
 											<ul class="dropdown-menu dropdown-light dropdown-subview">
 												<li>
-													<a href="#" class=""><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Tambah Tempat nongkrong</a>
+													<a href="#panel_edit_account" data-toggle="tab" class=""><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Tambah Tempat nongkrong</a>
 												</li>
 												
 											</ul>
@@ -228,7 +228,7 @@
 									<ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
 										<li class="active">
 											<a data-toggle="tab" href="#panel_overview">
-												Overview
+												Detail
 											</a>
 										</li>
 										<li>
