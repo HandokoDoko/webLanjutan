@@ -53,16 +53,15 @@
 		<!-- end: CORE CSS -->
 		<link rel="shortcut icon" href="favicon.ico" />
 		<script src="../js/jquery-1.11.2.min.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA"></script>
 		<script src="../js/alamat_dengan_maps.js"></script>
 		<style type="text/css">
-	#myMap{
-		margin:0 auto;
-		height: 400px;
-		width: 100%;
-	}
-
-	</style>
+			#myMap{
+				margin:0 auto;
+				height: 400px;
+				width: 100%;
+			}
+		</style>
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
@@ -728,7 +727,7 @@
 											</div>
 										</div>
 										<div id="panel_edit_account" class="tab-pane fade">
-											<form action="#" role="form" id="form">
+											<form action="/admin/tambah_kafe" role="form" id="form" method="POST">
 												<div class="row">
 													<div class="col-md-12">
 														<h3>Input data cafe</h3>
@@ -745,7 +744,7 @@
 															<label class="control-label">
 																Deskripsi Cafe
 															</label>
-															<textarea placeholder="Deskripsi Cafe" id="form-field-22" class="form-control"></textarea>
+															<textarea placeholder="Deskripsi Cafe" id="form-field-22" name="deskripsi" class="form-control"></textarea>
 														</div>
 														
 													</div>
@@ -757,7 +756,7 @@
 															<label class="control-label">
 																Alamat
 															</label>
-															<input type="text" placeholder="Alamat" id="address" disabled class="form-control">
+															<input type="text" placeholder="Alamat" id="address" name="alamat" class="form-control">
 														</div>
 														
 													</div>
@@ -766,7 +765,7 @@
 															<label class="control-label">
 																latitude
 															</label>
-															<input disabled type="text" name="lat" id="latitude" placeholder="Latitude" class="form-control">
+															<input type="text" name="lat" id="latitude" placeholder="Latitude" class="form-control">
 														</div>
 														
 													</div>
@@ -775,9 +774,14 @@
 															<label class="control-label">
 																longitude
 															</label>
-															<input disabled type="text" name="lng" id="longitude" placeholder="Longitude" class="form-control">
+															<input type="text" name="lng" id="id="longitude" placeholder="Longitude" class="form-control">
+														</div>	
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-8" >
+														<div class="form-group" id="myMap">
 														</div>
-														
 													</div>
 												</div>
 												<div class="row">
@@ -792,20 +796,13 @@
 																<div class="fileupload-preview fileupload-exists thumbnail"></div>
 																<div class="user-edit-image-buttons">
 																	<span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
-																		<input type="file">
+																		<input type="file" name="gambar">
 																	</span>
 																	<a href="#" class="btn fileupload-exists btn-red" data-dismiss="fileupload">
 																		<i class="fa fa-times"></i> Remove
 																	</a>
 																</div>
 															</div>
-														</div>
-													</div>
-
-												</div>
-												<div class="row">
-													<div class="col-md-8" >
-														<div class="form-group" id="myMap">
 														</div>
 													</div>
 												</div>
