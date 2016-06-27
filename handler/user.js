@@ -33,8 +33,8 @@ data_kafe = function(req, res){
 
 view_cafe = function(req, res){
 	console.log("Dapatkan 1 tempat");
-	db.collection('data').findOne({"_id": req.params.id}
-		,function(err, result){
+	db.collection('data').find({_id: req.params.id})
+		.toArray(function(err, result){
 			if (err) {
 				console.log(err);
 			}else{
