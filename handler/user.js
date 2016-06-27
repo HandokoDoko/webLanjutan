@@ -29,38 +29,18 @@ login = function(req, res){
 	res.render('./user/login.html');
 };
 
-check = function(req, res, next){
+check = function(req, res){
 	var username = req.body.username;
 	var pass = req.body.password;
 	var realPass;
 	if(username === "admin"){
 		if(pass === "admin"){
-			req.session.admin = true;
-			res.re
+			req.session.user = username;
+		  	res.redirect('/admin');
 		}
 	}
-	/*res.sendStatus(401);
-	User.where('username',username).fetch()
-	.then(function(user){
-		realPass = user.get('password');
-		if (pass===realPass){
-			req.session.user = username;
-			if(username==="admin"){
-				req.session.admin = true;
-			}
-			res.redirect('/admin');
-		}else{
-			res.sendStatus(401);
-		};
-	}).catch(function(err){
-		req.session.admin = true;
-		res.redirect('/admin');
-		console.log(err);
-		res.sendStatus(401);
-	}); */
+	res.redirect('/login');
 }; 
-
-
 
 handler = {
 	home: home,

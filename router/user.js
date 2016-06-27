@@ -8,6 +8,11 @@ router = function(app){
 	r.get('/detail_tempat', h.detail_tempat);
 	r.get('/lihat_peta', h.lihat_peta);
 	r.get('/login', h.login);
+
+	r.get('/logout', function (req, res) {
+	  res.redirect('/');
+	});
+
 	r.post('/check', h.check);
 	app.use(r);
 };

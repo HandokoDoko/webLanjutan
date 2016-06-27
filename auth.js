@@ -1,5 +1,5 @@
 function unauthorized(res){
-	return res.sendStatus(401);
+	res.redirect('/login');
 };
 
 function auth(req, res, next){
