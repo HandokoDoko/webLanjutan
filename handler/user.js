@@ -1,7 +1,7 @@
 var moment = require('moment'),
+	user,
 	handler,
-	home,
-	localStorage = require('node-localstorage').LocalStorage;
+	home;
 
 home = function(req, res){
 	res.render('./user/home.html');
@@ -30,8 +30,10 @@ login = function(req, res){
 	user = req.session.user || "";
 	if (user === 'admin'){
 		res.redirect('/admin');
-	};
-	res.render('./user/login.html');
+		console.log("telah masuk");
+	}
+	else
+		res.render('./user/login.html');
 };
 
 check = function(req, res){
