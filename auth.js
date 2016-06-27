@@ -2,11 +2,13 @@ function unauthorized(res){
 	res.redirect('/login');
 };
 
+
 function auth(req, res, next){
-	if (typeof req.session.user !== 'undefined'){
+	user = req.session.user || "";
+	if (user === 'admin'){
 		return next();
 	};
-	res.unauthorized(res);
+	return unauthorized(res);
 };
 
 module.exports = auth;

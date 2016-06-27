@@ -1,6 +1,7 @@
 var moment = require('moment'),
 	handler,
-	home;
+	home,
+	localStorage = require('node-localstorage').LocalStorage;
 
 home = function(req, res){
 	res.render('./user/home.html');
@@ -26,21 +27,25 @@ lihat_peta = function(req, res){
 
 
 login = function(req, res){
+	user = req.session.user || "";
+	if (user === 'admin'){
+		res.redirect('/admin');
+	};
 	res.render('./user/login.html');
 };
 
 check = function(req, res){
 	var username = req.body.username;
 	var pass = req.body.password;
-	var realPass;
-	if(username === "admin"){
-		if(pass === "admin"){
-			req.session.user = username;
-		  	res.redirect('/admin');
-		}
-	}
-	res.redirect('/login');
-}; 
+	if (username==="admin" && pass==="admin"){
+		req.session.user = username;
+		req.session.admin = true;
+		res.redirect('/admin');
+
+	}else{
+		res.redirect('/login');
+	};
+};
 
 handler = {
 	home: home,
