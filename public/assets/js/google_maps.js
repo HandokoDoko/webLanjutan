@@ -7,6 +7,8 @@ function initMap() {
   var origin_place_id = null;
   var destination_place_id = null;
   var travel_mode = google.maps.TravelMode.DRIVING;
+  var tujuan = new google.maps.LatLng(3.597608, 98.750229);
+
   var map = new google.maps.Map(document.getElementById("map"), {
     mapTypeControl: false,
     center: {lat: 3.597608, lng: 98.750229},
@@ -66,7 +68,7 @@ map.setZoom(17);
     
     pilihan.addEventListener('click', function() {
       travel_mode = mode;
-      route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
+      route(origin_place_id, tujuan, travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
 
       console.log(origin_place_id + place);
     });
@@ -105,6 +107,7 @@ map.setZoom(17);
     route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
     map.setZoom(17);
     marker.setMap(null);
+    console.log(origin_place_id);
     //route(origin_place_id, destination_place_id, travel_mode, directionsService, directionsDisplay);
   });
 
@@ -138,7 +141,7 @@ map.setZoom(17);
 
     directionsService.route({
       origin: {'placeId': origin_place_id},
-      destination: {'placeId': destination_place_id},
+      destination: {'<placeI></placeI>d': destination_place_id},
       travelMode: travel_mode
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
