@@ -1,24 +1,399 @@
 <!DOCTYPE html>
-<html>
+<!-- Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.2 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+	<!--<![endif]-->
+	<!-- start: HEAD -->
+	
+<!-- Mirrored from www.cliptheme.com/demo/rapido/layouts_horizontal_menu_fixed.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 13 Jan 2015 04:30:00 GMT -->
 <head>
-	<title> Detail kafe {{kafe.nama}}
-	</title>
-</head>
-<body>
-	<h1>Detail Kafe {{kafe.nama}}</h1>
-	<h2>{{kafe.deskripsi}}</h2>
-	<h3>{{kafe.alamat}}</h3>
-	<img src="{{kafe.gambar}}"> 
+		<title>Detail kafe {{kafe.name}}</title>
+		<!-- start: META -->
+		<meta charset="utf-8" />
 
-	<a href="/admin/addMenu/{{kafe._id}}"> Add Menu </a><br/>
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- end: META -->
+		<!-- start: MAIN CSS -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,200,100,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="../../plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="../../plugins/animate/css/animate.min.css">
+		<!-- end: MAIN CSS -->
+		<!-- start: CSS REQUIRED FOR SUBVIEW CONTENTS -->
+		<link rel="stylesheet" href="../../plugins/owl-carousel/owl-carousel/owl.carousel.css">
+		<link rel="stylesheet" href="../../plugins/owl-carousel/owl-carousel/owl.theme.css">
+		<link rel="stylesheet" href="../../plugins/owl-carousel/owl-carousel/owl.transitions.css">
+		<link rel="stylesheet" href="../../plugins/summernote/dist/summernote.css">
+		<link rel="stylesheet" href="../../plugins/fullcalendar/fullcalendar/fullcalendar.css">
+		<link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-select/bootstrap-select.min.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+		<link rel="stylesheet" href="../../plugins/DataTables/media/css/DT_bootstrap.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
+		<!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link rel="stylesheet" type="text/css" href="../../plugins/select2/select2.css" />
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CORE CSS -->
+		<link rel="stylesheet" href="../../css/styles.css">
+		<link rel="stylesheet" href="../../css/styles-responsive.css">
+		<link rel="stylesheet" href="../../css/plugins.css">
+		<link rel="stylesheet" href="../../css/themes/theme-default.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="../../css/print.css" type="text/css" media="print"/>
+		<!-- end: CORE CSS -->
+		<link rel="shortcut icon" href="favicon.ico" />
+		
+		<script src="../../js/jquery-1.11.2.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA"></script>
+	<script src="../../js/map_edit.js"></script>
+	<style type="text/css">
+	#myMap{
+		height: 400px;
+		width: 100%;
+		background-color: gray;
+	}
+	</style>
+	</head>
+	<!-- end: HEAD -->
+	<!-- start: BODY -->
+	<body class="sidebar-close horizontal-menu-fixed">		
+		<!-- end: SLIDING BAR -->
+		<div class="main-wrapper">
+			<!-- start: TOPBAR -->
+			<header class="topbar navbar navbar-inverse navbar-fixed-top inner">
+				<!-- start: TOPBAR CONTAINER -->
+				<div class="container">
+					<div class="navbar-header">
+						<a class="sb-toggle-left hidden-md hidden-lg" href="#main-navbar">
+							<i class="fa fa-bars"></i>
+						</a>
+						<!-- start: LOGO -->
+						<a class="navbar-brand" href="/">
+							TENOMED
+						</a>
+						<!-- end: LOGO -->
+					</div>
+					<div class="topbar-tools">
+						<!-- start: TOP NAVIGATION MENU -->
+						<ul class="nav navbar-right">
+							<!-- start: USER DROPDOWN -->
+							<li class="dropdown current-user">
+								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+									<img src="../../img/logo-kecil.png" class="img-circle" alt=""> <span class="username hidden-xs">TenoMed Admin</span> <i class="fa fa-caret-down "></i>
+								</a>
+								<ul class="dropdown-menu dropdown-dark">
+									<li>
+										<a href="/logout">
+											Log Out
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: USER DROPDOWN -->
+						</ul>
+						<!-- end: TOP NAVIGATION MENU -->
+					</div>
+				
+				</div>
+				<!-- end: TOPBAR CONTAINER -->
+			</header>
+					
+		</div>
+		
+<div class="main-container inner">
+				<!-- start: PAGE -->
+				<div class="main-content">
+					<!-- start: PANEL CONFIGURATION MODAL FORM -->
+					<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title">Panel Configuration</h4>
+								</div>
+								<div class="modal-body">
+									Here will be a configuration form
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">
+										Close
+									</button>
+									<button type="button" class="btn btn-primary">
+										Save changes
+									</button>
+								</div>
+							</div>
+							<!-- /.modal-content -->
+						</div>
+						<!-- /.modal-dialog -->
+					</div>
+					<!-- /.modal -->
+					<!-- end: SPANEL CONFIGURATION MODAL FORM -->
+					<div class="container">
+						<!-- start: PAGE HEADER -->
+						<!-- start: TOOLBAR -->
+						<div class="toolbar row">
+							<div class="col-sm-6 hidden-xs">
+								<div class="page-header">
+									<h1>TenoMed Admin Panel <small>Tempat nongkrongnya Kaula muda medan</small></h1>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<a href="#" class="back-subviews">
+									<i class="fa fa-chevron-left"></i> BACK
+								</a>
+								<a href="#" class="close-subviews">
+									<i class="fa fa-times"></i> CLOSE
+								</a>
+								<div class="toolbar-tools pull-right">
+									<!-- start: TOP NAVIGATION MENU -->
+									<ul class="nav navbar-right">
+										<!-- start: TO-DO DROPDOWN -->
+										<li class="dropdown">
+											<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+												<i class="fa fa-plus"></i> Add Tempat
+												<div class="tooltip-notification hide">
+													<div class="tooltip-notification-arrow"></div>
+													<div class="tooltip-notification-inner">
+														<div>
+															<div class="semi-bold">
+																INFO!
+															</div>
+															<div class="message">
+																Tambah Tempat Nongkrong
+															</div>
+														</div>
+													</div>
+												</div>
+											</a>
+											<ul class="dropdown-menu dropdown-light dropdown-subview">
+												<li>
+													<a href="#panel_edit_account" data-toggle="tab" class=""><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Tambah Tempat nongkrong</a>
+												</li>
+												
+											</ul>
+										</li>
+										
+										<li class="menu-search">
+											<a href="#">
+												<i class="fa fa-search"></i> SEARCH
+											</a>
+											<!-- start: SEARCH POPOVER -->
+											<div class="popover bottom search-box transition-all">
+												<div class="arrow"></div>
+												<div class="popover-content">
+													<!-- start: SEARCH FORM -->
+													<form class="" id="searchform" action="#">
+														<div class="input-group">
+															<input type="text" class="form-control" placeholder="Search">
+															<span class="input-group-btn">
+																<button class="btn btn-main-color btn-squared" type="button">
+																	<i class="fa fa-search"></i>
+																</button> </span>
+														</div>
+													</form>
+													<!-- end: SEARCH FORM -->
+												</div>
+											</div>
+											<!-- end: SEARCH POPOVER -->
+										</li>
+									</ul>
+									<!-- end: TOP NAVIGATION MENU -->
+								</div>
+							</div>
+						</div>
+						<!-- end: TOOLBAR -->
+						<!-- end: PAGE HEADER -->
+						<!-- start: BREADCRUMB -->
+						<div class="row">
+							&nbsp;
+						</div>
+						<!-- end: BREADCRUMB -->
+						<!-- start: PAGE CONTENT -->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="tabbable">
+									<ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+										<li class="active">
+											<a data-toggle="tab" href="#panel_overview">
+												Detail Cafe
+											</a>
+										</li>
+									</ul>
+									<div class="tab-content">
+										<div id="panel_overview" class="tab-pane fade in active">
+											<div class="row">
+												<div class="col-sm-5 col-md-4">
+													<div class="user-left">
+														<div class="center">
+															<div class="fileupload fileupload-new" data-provides="fileupload">
+																<div class="user-image">
+																	<div class="fileupload-new thumbnail"><img src="../../img/logo.png" alt="TenoMed Logo">
+																	</div>
+																</div>
+															</div>
+															<hr>
+															<div class="social-icons block">
+																<ul>
+																	<li data-placement="top" data-original-title="Twitter" class="social-twitter tooltips">
+																		<a href="http://www.twitter.com/" target="_blank">
+																			Twitter
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="Facebook" class="social-facebook tooltips">
+																		<a href="http://facebook.com/" target="_blank">
+																			Facebook
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="Google" class="social-google tooltips">
+																		<a href="http://google.com/" target="_blank">
+																			Google+
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="LinkedIn" class="social-linkedin tooltips">
+																		<a href="http://linkedin.com/" target="_blank">
+																			LinkedIn
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="Github" class="social-github tooltips">
+																		<a href="#" target="_blank">
+																			Github
+																		</a>
+																	</li>
+																</ul>
+															</div>
+															<hr>
+														</div>
+														
+														<table class="table table-condensed table-hover">
+															<thead>
+																<tr>
+																	<th colspan="3">Informasi Umum</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>Desainer</td>
+																	<td>
+																	<a href="http://www.facebook.com/dokotanjung">
+																		Handoko
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Perogrammer</td>
+																	<td>
+																	<a href="http://www.facebook.com/randymuhroji">
+																		Randy Muhroji
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Analis</td>
+																	<td>
+																	<a href="https://www.facebook.com/alpasoft.text?fref=ts">
+																		Muhammad Al-Pandi
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Tester</td>
+																	<td>
+																	<a href="https://www.facebook.com/AiisStreetteam">
+																		Harris Silalahi
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Birth</td>
+																	<td>28 Juni 2016</td>
+																</tr>
+																<tr>
+																	<td>Groups</td>
+																	<td>New company web site development, HR TenoMed</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<div class="col-sm-7 col-md-8">
+							<div class="alert alert-info">
+								<button data-dismiss="alert" class="close">
+									&times;
+								</button>
+								<strong>Setail data cafe back to, <a href="/admin"> HOME</a> </strong>
+							</div>
+							<div class="row">
+							<div class="col-md-12">
+								<!-- start: DYNAMIC TABLE PANEL -->
+								<div class="panel panel-white">
+									<div class="panel-heading">
+										<h4 class="panel-title">Data <span class="text-bold">Cafe</span></h4>
+										<div class="panel-tools">
+											<div class="dropdown">
+												<a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+													<i class="fa fa-cog"></i>
+												</a>
+												<ul class="dropdown-menu dropdown-light pull-right" role="menu">
+													<li>
+														<a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
+													</li>
+													<li>
+														<a class="panel-refresh" href="#">
+															<i class="fa fa-refresh"></i> <span>Refresh</span>
+														</a>
+													</li>
+													<li>
+														<a class="panel-expand" href="#">
+															<i class="fa fa-expand"></i> <span>Fullscreen</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="panel-body">
+										<div class="user-image">
+											<div class="fileupload-new thumbnail"><img src="../../img/1.jpg" alt="gambar cafe">
+											</div>
+										</div> 
 
-	<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+	
+										<h4>Detail Kafe {{kafe.nama}} </h4>
+										<dl>
+											<dt>
+												Deskripsi Cafe
+											</dt>
+											<dd>
+												<p>{{kafe.deskripsi}}</p>
+											</dd>
+											<dt>
+												Alamat Kafe
+											</dt>
+											<dd>
+												{{kafe.alamat}}
+											</dd>
+											
+										</dl>
+										<hr>
+												<strong><a href="/admin/addMenu/{{kafe._id}}"> Add Menu </a></strong>
+											<br>
+
+										<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
 											<thead>
 												<tr>
 													<th>Nama Menu</th>
 													<th class="hidden-xs">Harga</th>
 													<th>Jenis</th>
-													<th class="hidden-xs" width="120"> Action </th>
+													<th class="hidden-xs" width="120"> Action</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -33,35 +408,40 @@
 														<a href="/admin/edit/{{data._id}}" class="btn btn-xs btn-blue tooltips " data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
 														<a href="/admin/detail/{{data._id}}" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Share"><i class="fa fa-share"></i></a>
 														<a href="#" class="btn btn-xs btn-red tooltips deleteKafe" id="{{ data._id }}" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
-													</div>
-													<div class="visible-xs visible-sm hidden-md hidden-lg">
-														<div class="btn-group">
-															<a class="btn btn-green dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-																<i class="fa fa-cog"></i> <span class="caret"></span>
-															</a>
-															<ul role="menu" class="dropdown-menu pull-right dropdown-dark">
-																<li>
-																	<a role="menuitem" tabindex="-1" href="#">
-																		<i class="fa fa-edit editKafe" id="{{ data._id }}></i> Edit
-																	</a>
-																</li>
-																<li>
-																	<a role="menuitem" tabindex="-1" href="#">
-																		<i class="fa fa-share"></i> Info
-																	</a>
-																</li>
-																<li>
-																	<a role="menuitem" tabindex="-1" href="/admin:{data._id}" type="delete"> 
-																		<i class="fa fa-times deleteKafe" id="{{ data._id }}"></i> Remove
-																	</a>
-																</li>
-															</ul>
-														</div>
 													</div></td>
 												</tr>
 												{% endif %}
 												{% else %}
 									            <b>Data Tidak Ada</b>
 									            {% endfor %}
-</body>
-</html>
+												
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<!-- end: DYNAMIC TABLE PANEL -->
+							</div>
+						</div>
+													
+												</div>
+												
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="subviews">
+						<div class="subviews-container"></div>
+					</div>
+				</div>
+				<!-- end: PAGE -->
+			</div>
+			<!-- end: MAIN CONTAINER -->
+		
+			
+
+
