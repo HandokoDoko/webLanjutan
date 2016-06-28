@@ -252,9 +252,9 @@
                             </a>
                         </li>
 			<li>
-                            <a href="/login" data-scroll="true">
-                            	Log in As Admin
-                            </a>
+                            
+                            {% block status %}
+                            {% endblock %}
                         </li>
                     </ul>
                 </div>
@@ -295,7 +295,7 @@
           
             <div class="section section-team-2" id="team">
                 {% block team %}
-        	{% endblock %}
+        	    {% endblock %}
             </div>
             
             <footer class="footer footer-color-black">

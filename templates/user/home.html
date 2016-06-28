@@ -2,6 +2,18 @@
 
 {% block title %}TenoMed{% endblock %}
 
+{% block status %}
+    {% if user == "" %}
+        <a href="/login" data-scroll="true">
+            Login As Admin
+        </a>
+    {% else %}
+        <a href="/admin" data-scroll="true">
+            Admin Panel
+        </a>
+    {% endif %}
+{% endblock %}
+
 {% block projects %}
 <div class="container">
     <div class="row">

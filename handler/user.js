@@ -16,9 +16,10 @@ MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', func
 })
 
 home = function(req, res){
+	user = req.session.user || "";
 	db.collection('data').find().toArray(function(err, result){
 		if(err)return console.log(err);
-		res.render('./user/home.html', {datas: result})
+		res.render('./user/home.html', {datas: result, user : user})
 	})
 };
 data_kafe = function(req, res){
