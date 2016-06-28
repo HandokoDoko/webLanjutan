@@ -51,6 +51,7 @@
 											</thead>
 											<tbody>
 											{% for data in datas %}
+												{% if data.nama %}
 												<tr>
 													<td>{{ data.nama }}</td>
 													<td class="hidden-xs">{{ data.alamat }}</td>
@@ -64,6 +65,7 @@
 												
 													</div></td>
 												</tr>
+												{% endif %}
 												{% else %}
 									            <b>Data Tidak Ada</b>
 									            {% endfor %}

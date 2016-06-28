@@ -8,4 +8,4 @@ $node index.js
 
 #link deploy
 
-$teno-med.herokuapp.com
+teno-med.herokuapp.com
