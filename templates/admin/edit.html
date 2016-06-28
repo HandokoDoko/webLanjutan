@@ -1,60 +1,618 @@
 <!DOCTYPE html>
+<!-- Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.2 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
+	<!--<![endif]-->
+	<!-- start: HEAD -->
+	
+<!-- Mirrored from www.cliptheme.com/demo/rapido/layouts_horizontal_menu_fixed.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 13 Jan 2015 04:30:00 GMT -->
 <head>
-	<meta charset="UTF-8">
-	<title>Data Kafe</title>
-	<script src="../../js/jquery-1.11.2.min.js"></script>
+		<title>edit data cafe</title>
+		<!-- start: META -->
+		<meta charset="utf-8" />
+
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- end: META -->
+		<!-- start: MAIN CSS -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,200,100,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../../plugins/bootstrap/../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../plugins/font-awesome/../../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="../../plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="../../plugins/animate.../../css/animate.min.css">
+		<!-- end: MAIN CSS -->
+		<!-- start: CSS REQUIRED FOR SUBVIEW CONTENTS -->
+		<link rel="stylesheet" href="../../plugins/owl-carousel/owl-carousel/owl.carousel.css">
+		<link rel="stylesheet" href="../../plugins/owl-carousel/owl-carousel/owl.theme.css">
+		<link rel="stylesheet" href="../../plugins/owl-carousel/owl-carousel/owl.transitions.css">
+		<link rel="stylesheet" href="../../plugins/summernote/dist/summernote.css">
+		<link rel="stylesheet" href="../../plugins/fullcalendar/fullcalendar/fullcalendar.css">
+		<link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-select/bootstrap-select.min.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-switch/dist/../../css/bootstrap3/bootstrap-switch.min.css">
+		<link rel="stylesheet" href="../../plugins/DataTables/media/../../css/DT_bootstrap.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
+		<link rel="stylesheet" href="../../plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
+		<!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link rel="stylesheet" type="text/css" href="../../plugins/select2/select2.css" />
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CORE CSS -->
+		<link rel="stylesheet" href="../../css/styles.css">
+		<link rel="stylesheet" href="../../css/styles-responsive.css">
+		<link rel="stylesheet" href="../../css/plugins.css">
+		<link rel="stylesheet" href="../../css/themes/theme-default.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="../../css/print.css" type="text/css" media="print"/>
+		<!-- end: CORE CSS -->
+		<link rel="shortcut icon" href="favicon.ico" />
+		
+		<script src="../../js/jquery-1.11.2.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA"></script>
 	<script src="../../js/map_edit.js"></script>
 	<style type="text/css">
 	#myMap{
 		height: 400px;
-		width: 50%;
+		width: 100%;
 		background-color: gray;
 	}
 	</style>
-</head>
-<body>
-	<form action="/admin/edit"  method="POST">
-	<table>
-		<tr>
-			<td>Nama Cafe / Usaha</td>
-			<td>:</td>
-			<td><input type="text" id="nama" name="nama" value="{{kafe.nama}}"></td>
-		</tr>
+	</head>
+	<!-- end: HEAD -->
+	<!-- start: BODY -->
+	<body class="sidebar-close horizontal-menu-fixed">		
+		<!-- end: SLIDING BAR -->
+		<div class="main-wrapper">
+			<!-- start: TOPBAR -->
+			<header class="topbar navbar navbar-inverse navbar-fixed-top inner">
+				<!-- start: TOPBAR CONTAINER -->
+				<div class="container">
+					<div class="navbar-header">
+						<a class="sb-toggle-left hidden-md hidden-lg" href="#main-navbar">
+							<i class="fa fa-bars"></i>
+						</a>
+						<!-- start: LOGO -->
+						<a class="navbar-brand" href="/">
+							TENOMED
+						</a>
+						<!-- end: LOGO -->
+					</div>
+					<div class="topbar-tools">
+						<!-- start: TOP NAVIGATION MENU -->
+						<ul class="nav navbar-right">
+							<!-- start: USER DROPDOWN -->
+							<li class="dropdown current-user">
+								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+									<img src="/img/logo-kecil.png" class="img-circle" alt=""> <span class="username hidden-xs">TenoMed Admin</span> <i class="fa fa-caret-down "></i>
+								</a>
+								<ul class="dropdown-menu dropdown-dark">
+									<li>
+										<a href="/logout">
+											Log Out
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: USER DROPDOWN -->
+						</ul>
+						<!-- end: TOP NAVIGATION MENU -->
+					</div>
+				
+				</div>
+				<!-- end: TOPBAR CONTAINER -->
+			</header>
+					
+		</div>
+		
+<div class="main-container inner">
+				<!-- start: PAGE -->
+				<div class="main-content">
+					<!-- start: PANEL CONFIGURATION MODAL FORM -->
+					<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title">Panel Configuration</h4>
+								</div>
+								<div class="modal-body">
+									Here will be a configuration form
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">
+										Close
+									</button>
+									<button type="button" class="btn btn-primary">
+										Save changes
+									</button>
+								</div>
+							</div>
+							<!-- /.modal-content -->
+						</div>
+						<!-- /.modal-dialog -->
+					</div>
+					<!-- /.modal -->
+					<!-- end: SPANEL CONFIGURATION MODAL FORM -->
+					<div class="container">
+						<!-- start: PAGE HEADER -->
+						<!-- start: TOOLBAR -->
+						<div class="toolbar row">
+							<div class="col-sm-6 hidden-xs">
+								<div class="page-header">
+									<h1>TenoMed Admin Panel <small>Tempat nongkrongnya Kaula muda medan</small></h1>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<a href="#" class="back-subviews">
+									<i class="fa fa-chevron-left"></i> BACK
+								</a>
+								<a href="#" class="close-subviews">
+									<i class="fa fa-times"></i> CLOSE
+								</a>
+								<div class="toolbar-tools pull-right">
+									<!-- start: TOP NAVIGATION MENU -->
+									<ul class="nav navbar-right">
+										<!-- start: TO-DO DROPDOWN -->
+										<li class="dropdown">
+											<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+												<i class="fa fa-plus"></i> Add Tempat
+												<div class="tooltip-notification hide">
+													<div class="tooltip-notification-arrow"></div>
+													<div class="tooltip-notification-inner">
+														<div>
+															<div class="semi-bold">
+																INFO!
+															</div>
+															<div class="message">
+																Tambah Tempat Nongkrong
+															</div>
+														</div>
+													</div>
+												</div>
+											</a>
+											<ul class="dropdown-menu dropdown-light dropdown-subview">
+												<li>
+													<a href="#panel_edit_account" data-toggle="tab" class=""><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Tambah Tempat nongkrong</a>
+												</li>
+												
+											</ul>
+										</li>
+										
+										<li class="menu-search">
+											<a href="#">
+												<i class="fa fa-search"></i> SEARCH
+											</a>
+											<!-- start: SEARCH POPOVER -->
+											<div class="popover bottom search-box transition-all">
+												<div class="arrow"></div>
+												<div class="popover-content">
+													<!-- start: SEARCH FORM -->
+													<form class="" id="searchform" action="#">
+														<div class="input-group">
+															<input type="text" class="form-control" placeholder="Search">
+															<span class="input-group-btn">
+																<button class="btn btn-main-color btn-squared" type="button">
+																	<i class="fa fa-search"></i>
+																</button> </span>
+														</div>
+													</form>
+													<!-- end: SEARCH FORM -->
+												</div>
+											</div>
+											<!-- end: SEARCH POPOVER -->
+										</li>
+									</ul>
+									<!-- end: TOP NAVIGATION MENU -->
+								</div>
+							</div>
+						</div>
+						<!-- end: TOOLBAR -->
+						<!-- end: PAGE HEADER -->
+						<!-- start: BREADCRUMB -->
+						<div class="row">
+							&nbsp;
+						</div>
+						<!-- end: BREADCRUMB -->
+						<!-- start: PAGE CONTENT -->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="tabbable">
+									<ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+										<li class="active">
+											<a data-toggle="tab" href="#panel_overview">
+												Edit Data Cafe
+											</a>
+										</li>
+										<li>
+									</ul>
+									<div class="tab-content">
+										<div id="panel_overview" class="tab-pane fade in active">
+											<div class="row">
+												<div class="col-sm-5 col-md-4">
+													<div class="user-left">
+														<div class="center">
+															<div class="fileupload fileupload-new" data-provides="fileupload">
+																<div class="user-image">
+																	<div class="fileupload-new thumbnail"><img src="../../img/logo.png" alt="TenoMed Logo">
+																	</div>
+																</div>
+															</div>
+															<hr>
+															<div class="social-icons block">
+																<ul>
+																	<li data-placement="top" data-original-title="Twitter" class="social-twitter tooltips">
+																		<a href="http://www.twitter.com/" target="_blank">
+																			Twitter
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="Facebook" class="social-facebook tooltips">
+																		<a href="http://facebook.com/" target="_blank">
+																			Facebook
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="Google" class="social-google tooltips">
+																		<a href="http://google.com/" target="_blank">
+																			Google+
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="LinkedIn" class="social-linkedin tooltips">
+																		<a href="http://linkedin.com/" target="_blank">
+																			LinkedIn
+																		</a>
+																	</li>
+																	<li data-placement="top" data-original-title="Github" class="social-github tooltips">
+																		<a href="#" target="_blank">
+																			Github
+																		</a>
+																	</li>
+																</ul>
+															</div>
+															<hr>
+														</div>
+														
+														<table class="table table-condensed table-hover">
+															<thead>
+																<tr>
+																	<th colspan="3">Informasi Umum</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>Desainer</td>
+																	<td>
+																	<a href="http://www.facebook.com/dokotanjung">
+																		Handoko
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Perogrammer</td>
+																	<td>
+																	<a href="http://www.facebook.com/randymuhroji">
+																		Randy Muhroji
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Analis</td>
+																	<td>
+																	<a href="https://www.facebook.com/alpasoft.text?fref=ts">
+																		Muhammad Al-Pandi
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Tester</td>
+																	<td>
+																	<a href="https://www.facebook.com/AiisStreetteam">
+																		Harris Silalahi
+																	</a></td>
+																</tr>
+																<tr>
+																	<td>Birth</td>
+																	<td>28 Juni 2016</td>
+																</tr>
+																<tr>
+																	<td>Groups</td>
+																	<td>New company web site development, HR TenoMed</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<div class="col-sm-7 col-md-8">
+							<div class="alert alert-info">
+								<button data-dismiss="alert" class="close">
+									&times;
+								</button>
+								<strong>Edit data Cafe! </strong>
+							</div>
+							<div class="row">
+							<div class="col-md-12">
+								<!-- start: DYNAMIC TABLE PANEL -->
+								<form action="/admin/edit" role="form" id="form" method="POST">
+												<div class="row">
+													<div class="col-md-12">
+														<h3>Input data cafe</h3>
+														<hr>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">
+																Nama Cafe / Usaha
+															</label>
+															<input type="text" placeholder="Nama cafe" id="nama" name="nama" class="form-control" value="{{kafe.nama}}">
+														</div>
+														<div class="form-group">
+															<label class="control-label">
+																Deskripsi Cafe
+															</label>
+															<textarea placeholder="Deskripsi Cafe" id="form-field-22" name="deskripsi" class="form-control">{{kafe.deskripsi}}</textarea>
+														</div>
+														
+													</div>
+													
+												</div>
+												<div class="row">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																Alamat
+															</label>
+															<input type="text" placeholder="Alamat" id="address" name="alamat" class="form-control"  value="{{kafe.alamat}}">
+														</div>
+														
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																latitude
+															</label>
+															<input type="text" name="lat" id="latitude" placeholder="Latitude" class="form-control" value="{{kafe.lat}}">
+														</div>
+														
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																longitude
+															</label>
+															<input type="text" name="lng" id="longitude" placeholder="Longitude" class="form-control" value="{{kafe.lng}}">
+														</div>	
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-8" >
+														<div class="form-group" id="myMap">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>
+																Image Upload
+															</label>
+															<div class="fileupload fileupload-new" data-provides="fileupload">
+																<div class="fileupload-new thumbnail"><img src="../../{{kafe.img}}" alt="">
+																</div>
+																<div class="fileupload-preview fileupload-exists thumbnail"></div>
+																<div class="user-edit-image-buttons">
+																	<span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
+																		<input type="file" name="gambar">
+																	</span>
+																	<a href="#" class="btn fileupload-exists btn-red" data-dismiss="fileupload">
+																		<i class="fa fa-times" id=""></i> Remove
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												</br>
+												<div class="row">
+													<div class="col-md-8">
+														<p>
+															By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions.
+														</p>
+													</div>
+													<div class="col-md-4">
+													<input type="hidden" value="{{kafe._id}}" name = "id">
+													<input type="hidden" name="_method" value="put"/>
+														<button class="btn btn-green btn-block" type="submit">
+															Submit <i class="fa fa-arrow-circle-right"></i>
+														</button>
+													</div>
+												</div>
+											</form>
 
-		<tr>
-			<td>Deskripsi Cafe / Usaha</td>
-			<td>:</td>
-			<td><input type="text"  id="form-field-22" class="form-control" name="deskripsi" value="{{kafe.deskripsi}}"/></td>
-		</tr>
-		<tr>
-			<td>Alamat</td>
-			<td>:</td>
-			<td>
-	            <input id="address" type="text" value="{{kafe.alamat}}" name = "alamat" />
-	            Lat: <input  type="text" name="lat" id="latitude" placeholder="Latitude" value="{{kafe.lat}}" />
-	            Lng: <input  type="text" name="lng" id="longitude" placeholder="Longitude" value="{{kafe.lng}}"/>
-            </td>
-		</tr>
-		<tr>
-			<td>Foto Profil Usaha Anda</td>
-			<td>:</td>
-			<img src="{{kafe.img}}"/>
-			<td>
-				<input type="file" name="img">
-				<br>{{ kafe.gambar }}
-			</td>
-		</tr>
-	</table>
+								<!-- end: DYNAMIC TABLE PANEL -->
+							</div>
+						</div>
+													
+												</div>
+												
+											</div>
+										</div>
+										<div id="panel_edit_account" class="tab-pane fade">
+											<form action="/admin/tambah_kafe" role="form" id="form" method="POST">
+												<div class="row">
+													<div class="col-md-12">
+														<h3>Input data cafe</h3>
+														<hr>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">
+																Nama Cafe / Usaha
+															</label>
+															<input type="text" placeholder="Nama cafe" id="nama" name="nama" class="form-control">
+														</div>
+														<div class="form-group">
+															<label class="control-label">
+																Deskripsi Cafe
+															</label>
+															<textarea placeholder="Deskripsi Cafe" id="form-field-22" name="deskripsi" class="form-control"></textarea>
+														</div>
+														
+													</div>
+													
+												</div>
+												<div class="row">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																Alamat
+															</label>
+															<input type="text" placeholder="Alamat" id="address" name="alamat" class="form-control">
+														</div>
+														
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																latitude
+															</label>
+															<input type="text" name="lat" id="latitude" placeholder="Latitude" class="form-control">
+														</div>
+														
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																longitude
+															</label>
+															<input type="text" name="lng" id="longitude" placeholder="Longitude" class="form-control">
+														</div>	
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-8" >
+														<div class="form-group" id="myMap">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>
+																Image Upload
+															</label>
+															<div class="fileupload fileupload-new" data-provides="fileupload">
+																<div class="fileupload-new thumbnail"><img src="images/avatar-1-xl.jpg" alt="">
+																</div>
+																<div class="fileupload-preview fileupload-exists thumbnail"></div>
+																<div class="user-edit-image-buttons">
+																	<span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
+																		<input type="file" name="gambar">
+																	</span>
+																	<a href="#" class="btn fileupload-exists btn-red" data-dismiss="fileupload">
+																		<i class="fa fa-times" id=""></i> Remove
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												</br>
+												<div class="row">
+													<div class="col-md-8">
+														<p>
+															By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions.
+														</p>
+													</div>
+													<div class="col-md-4">
+														<button class="btn btn-green btn-block" type="submit">
+															Submit <i class="fa fa-arrow-circle-right"></i>
+														</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+	
+					<div class="subviews">
+						<div class="subviews-container"></div>
+					</div>
+				</div>
+				<!-- end: PAGE -->
+			</div>
+			<!-- end: MAIN CONTAINER -->
+		
+			
 
-    <p>Lokasi Anda Dalam Bentuk Map</p>
-    <div id="myMap">
-    	
-    </div><br/>
-	<input type="hidden" value="{{kafe._id}}" name = "id">
-	<input type="hidden" name="_method" value="put"/>
-	<button type="submit">submit</button>
-	</form>
-</body>
+
+		<!-- start: MAIN JAVASCRIPTS -->
+		<!--[if lt IE 9]>
+		<script src="../../plugins/respond.min.js"></script>
+		<script src="../../plugins/excanvas.min.js"></script>
+		<script type="text/javascript" src="../../plugins/jQuery/jquery-1.11.1.min.js"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+		
+		<script src="../../plugins/jQuery/jquery-2.1.1.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<!--<![endif]-->
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/moment/min/moment.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/bootbox/bootbox.min.js"></script>
+		<script src="../../plugins/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+		<script src="../../plugins/ScrollToFixed/jquery-scrolltofixed-min.js"></script>
+		<script src="../../plugins/jquery.appear/jquery.appear.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/velocity/jquery.velocity.min.js"></script>
+		<script src="../../plugins/TouchSwipe/jquery.touchSwipe.min.js"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
+		<script src="../../plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+		<script src="../../plugins/jquery-mockjax/jquery.mockjax.js"></script>
+		<script src="../../plugins/toastr/toastr.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+		<script src="../../plugins/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+		<script src="../../plugins/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+		<script src="../../plugins/bootstrap-select/bootstrap-select.min.js"></script>
+		<script src="../../plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="../../plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+		<script src="../../plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
+		<script src="../../plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script src="../../plugins/truncate/jquery.truncate.js"></script>
+		<script src="../../plugins/summernote/dist/summernote.min.js"></script>
+		<script src="../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<script src="js/subview.js"></script>
+		<script src="js/subview-examples.js"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="js/table-data.js"></script>
+		<script type="text/javascript" src="js/admin.js"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CORE JAVASCRIPTS  -->
+		<script src="js/main.js"></script>
+		<!-- end: CORE JAVASCRIPTS  -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				SVExamples.init();
+				TableData.init();
+			});
+		</script>
+	</body>
+	<!-- end: BODY -->
+
+<!-- Mirrored from www.cliptheme.com/demo/rapido/layouts_horizontal_menu_fixed.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 13 Jan 2015 04:30:00 GMT -->
 </html>
