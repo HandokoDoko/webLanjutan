@@ -1,7 +1,7 @@
 var express = require('express'),
 	middleware = require('./middleware'),
 	MongoClient = require('mongodb').MongoClient,
-	//mongoose=require("mongoose"),
+	mongoose=require("mongoose"),
 	app = express(),
 	db;
 	
