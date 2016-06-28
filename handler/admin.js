@@ -60,12 +60,6 @@ add_kafe = function(req, res){
 
 var deleteKafe = function(req, res){
 	console.log(req.params.id);
-/*	new User()
-	.where({"_id":req.params.id})
-	.destroy()
-	.then(function(model){
-		res.sendStatus(204);
-	});*/
 
 	db.collection('data').findOneAndDelete({ "_id" : ObjectId(req.params.id)}, (function(err, result){
 		if(err)return console.log(err);
@@ -73,10 +67,49 @@ var deleteKafe = function(req, res){
 	}))
 };
 
+var editKafe = function(req, res){
+	db.collection('data').findOne(
+	{
+		"_id": ObjectId(req.params.id)
+
+	},function(err, result){
+			if (err) return res.send("Error Occurent");
+			else{
+				var data = result;
+				res.render('./admin/edit.html', {kafe: data})
+	//			res.sendStatus(204);
+			}
+	});
+	//res.sendStatus(204);
+};
+
+var edit = function(req,res){
+	db.collection('data')
+	  .findOneAndUpdate({ "_id" : ObjectId(req.body.id)}, {
+	    $set: {
+	        nama: req.body.nama,
+      		deskripsi : req.body.deskripsi,
+      		alamat : req.body.alamat,
+      		lat : req.body.lat,
+      		lng : req.body.lng,
+      		gambar : req.body.gbr
+	    }
+	  }, {
+	    sort: {_id: -1},
+	    upsert: true
+	  }, function(err, result)  {
+	    if (err) return res.send(err);
+	    console.log(result);
+	    res.redirect('/admin');
+	  })
+};
+
 handler = {
 	index: index,
 	add_kafe: add_kafe,
-	deleteKafe : deleteKafe
+	deleteKafe : deleteKafe,
+	editKafe : editKafe,
+	edit:edit
 };
 
 module.exports = handler;

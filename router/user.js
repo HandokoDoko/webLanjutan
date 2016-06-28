@@ -8,7 +8,8 @@ router = function(app){
 	r.get('/', h.home);
 	r.get('/detail_tempat', h.data_kafe);
 	r.get('/detail_tempat/:id', h.view_cafe);
-	r.get('/lihat_peta', h.lihat_peta);
+	//r.get('/lihat_peta', h.lihat_peta);
+	r.get('/lihat_peta/:id', h.lihat_peta);
 	r.get('/login',h.login);
 
 	r.get('/logout', function (req, res) {

@@ -9,3 +9,4 @@ $(".deleteKafe").click(function(){
 	});
 	location.reload();
 });
+

@@ -5,12 +5,14 @@ var express = require('express'),
 	router;
 
 router = function(app){
-	r.get('/admin', auth, h.index);
+	r.get('/admin', h.index);
 	//r.get('/admin/data_kafe', auth,h.add_kafe);
 	r.post('/admin/tambah_kafe', h.add_kafe);
+	//r.ed
 	r.delete('/admin/:id', h.deleteKafe);
-	r.post('/admin/tambah_kafe', auth, h.add_kafe);
-	
+	//r.post('/admin/tambah_kafe', auth, h.add_kafe);
+	r.get('/admin/edit/:id', h.editKafe);
+	r.post('/admin/edit',h.edit);
 	app.use(r);
 };
 module.exports = router;

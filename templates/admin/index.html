@@ -370,7 +370,7 @@
 													<th>Nama cafe</th>
 													<th class="hidden-xs">Alamat</th>
 													<th>Description</th>
-													<th class="hidden-xs"> Action</th>
+													<th class="hidden-xs" width="120"> Action</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -381,7 +381,7 @@
 													<td>{{ data.deskripsi }}</td>
 													<td class="center">
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
-														<a href="#" class="btn btn-xs btn-blue tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+														<a href="/admin/edit/{{data._id}}" class="btn btn-xs btn-blue tooltips " data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
 														<a href="#" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Share"><i class="fa fa-share"></i></a>
 														<a href="#" class="btn btn-xs btn-red tooltips deleteKafe" id="{{ data._id }}" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
 													</div>
@@ -393,7 +393,7 @@
 															<ul role="menu" class="dropdown-menu pull-right dropdown-dark">
 																<li>
 																	<a role="menuitem" tabindex="-1" href="#">
-																		<i class="fa fa-edit"></i> Edit
+																		<i class="fa fa-edit editKafe" id="{{ data._id }}></i> Edit
 																	</a>
 																</li>
 																<li>

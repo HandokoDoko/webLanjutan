@@ -51,19 +51,20 @@ view_cafe = function(req, res){
 };
 
 lihat_peta = function(req, res){
-	var data = [
-		{
-			lat: 3.597608,
-			lng: 98.750229,
-			tujuan: "ChIJmbe7_Mo2MTARxpIOmnPC2C0"
-		},
-		{
-			lat: 3.597608,
-			lng: 98.750229,
-			tujuan: "KAMU"
-		}
-	];
-	res.render('./user/lihat_peta_tempat.html', {data: data});
+	console.log("Dapatkan 1 tempat");
+	db.collection('data').findOne(
+	{
+		"_id": ObjectId(req.params.id)
+
+	},function(err, result){
+			if (err) return res.send("Error Occurent");
+			else{
+				//res.json(result);
+				var data = result;
+				res.render('./user/lihat_peta_tempat.html', {oneData: data})
+				console.log(data);
+			}
+	})
 };
 
 
