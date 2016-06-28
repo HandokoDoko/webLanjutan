@@ -1,6 +1,6 @@
 {% extends "./base_tempat.html" %}
     {% block title %}
-        {{ datas[0].nama }}
+        {{ oneData.nama }}
     {% endblock %}
     {% block mapcss %}
     <style type="text/css">
@@ -20,7 +20,7 @@
     {% endblock %}
 
     {% block nama_tempat %}
-        {{ datas[0].nama }}
+        {{ oneData.nama }}
     {% endblock %}
     
     {% block konten %}
@@ -37,10 +37,10 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="img/1.jpg" alt="" height="400" width="800">
+                                    <img class="slide-image" src="../img/1.jpg" alt="" height="400" width="800">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="img/2.jpg" alt="" width="800" height="400">
+                                    <img class="slide-image" src="../img/2.jpg" alt="" width="800" height="400">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -56,8 +56,7 @@
 
                 <div class="panel panel-default"s>
                   <div class="panel-body">
-                    <a href="/lihat_peta" class="btn btn-primary btn-lg" style="vertical-align: center">
-                        {{ datas[0].nama }}Lihat Peta</a>
+                    <a href="/lihat_peta/{{ oneData._id }}" class="btn btn-primary btn-lg" style="vertical-align: center">Lihat Peta</a>
                   </div>
                 </div>
 
@@ -82,7 +81,7 @@
 
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
-                                    <img src="img/makan1.jpg" alt="">
+                                    <img src="../img/makan1.jpg" alt="">
                                     <div class="caption">
                                         <h4 class="pull-right">$24.99</h4>
                                         <h4><a href="#">First Product</a>
@@ -104,7 +103,7 @@
 
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
-                                    <img src="img/makan2.jpg" alt="">
+                                    <img src="../img/makan2.jpg" alt="">
                                     <div class="caption">
                                         <h4 class="pull-right">$64.99</h4>
                                         <h4><a href="#">Second Product</a>
@@ -126,7 +125,7 @@
 
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
-                                    <img src="img/makan3.jpg" alt="">
+                                    <img src="../img/makan3.jpg" alt="">
                                     <div class="caption">
                                         <h4 class="pull-right">$74.99</h4>
                                         <h4><a href="#">Third Product</a>
@@ -148,7 +147,7 @@
 
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
-                                    <img src="img/makan4.jpg" alt="">
+                                    <img src="../img/makan4.jpg" alt="">
                                     <div class="caption">
                                         <h4 class="pull-right">$84.99</h4>
                                         <h4><a href="#">Fourth Product</a>
@@ -170,7 +169,7 @@
 
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
-                                    <img src="img/makan5.jpg" alt="">
+                                    <img src="../img/makan5.jpg" alt="">
                                     <div class="caption">
                                         <h4 class="pull-right">$94.99</h4>
                                         <h4><a href="#">Fifth Product</a>
@@ -192,7 +191,7 @@
 
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
-                                    <img src="img/makan6.jpg" alt="">
+                                    <img src="../img/makan6.jpg" alt="">
                                     <div class="caption">
                                         <h4 class="pull-right">$94.99</h4>
                                         <h4><a href="#">Fifth Product</a>
@@ -226,7 +225,7 @@
                             <div class="row">
                                 <div class="col-sm-4 col-lg-4 col-md-4">
                                     <div class="thumbnail">
-                                        <img src="img/minum1.jpg" alt="">
+                                        <img src="../img/minum1.jpg" alt="">
                                         <div class="caption">
                                             <h4 class="pull-right">$24.99</h4>
                                             <h4><a href="#">First Product</a>
@@ -248,7 +247,7 @@
 
                                 <div class="col-sm-4 col-lg-4 col-md-4">
                                     <div class="thumbnail">
-                                        <img src="img/minum2.jpg" alt="">
+                                        <img src="../img/minum2.jpg" alt="">
                                         <div class="caption">
                                             <h4 class="pull-right">$64.99</h4>
                                             <h4><a href="#">Second Product</a>
@@ -270,7 +269,7 @@
 
                                 <div class="col-sm-4 col-lg-4 col-md-4">
                                     <div class="thumbnail">
-                                        <img src="img/minum3.jpg" alt="">
+                                        <img src="../img/minum3.jpg" alt="">
                                         <div class="caption">
                                             <h4 class="pull-right">$74.99</h4>
                                             <h4><a href="#">Third Product</a>

@@ -40,12 +40,12 @@ view_cafe = function(req, res){
 		"_id": ObjectId(req.params.id)
 
 	},function(err, result){
-			if (err) {
-				console.log(err);
-			}else{
+			if (err) return res.send("Error Occurent");
+			else{
 				//res.json(result);
-				res.render('./user/detail_tempat.html', {datas: result});
-				console.log(result);
+				var data = result;
+				res.render('./user/detail_tempat.html', {oneData: data})
+				console.log(data);
 			}
 	})
 };
