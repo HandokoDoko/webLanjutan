@@ -44,7 +44,7 @@
     color: #FFF;
 }
 .register-background{
-    background-image: url('/img/landscape.jpg');
+    background-image: url('/img/bg_login.png');
     background-position: center center;
     background-size: cover;
     min-height: 100vh;

@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Data Kafe</title>
-	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="../../js/jquery-1.11.2.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA"></script>
-	<script src="js/alamat_dengan_maps.js"></script>
+	<script src="../../js/map_edit.js"></script>
 	<style type="text/css">
 	#myMap{
 		height: 400px;
 		width: 50%;
+		background-color: gray;
 	}
 	</style>
 </head>
@@ -25,29 +26,33 @@
 		<tr>
 			<td>Deskripsi Cafe / Usaha</td>
 			<td>:</td>
-			<td><input type="text"  id="form-field-22" class="form-control" value="{{kafe.deskripsi}}" name="deskripsi"/></td>
+			<td><input type="text"  id="form-field-22" class="form-control" value="{{kafe.deskripsi}}" name="deskripsi"/>
 		</tr>
 		<tr>
 			<td>Alamat</td>
 			<td>:</td>
 			<td>
 	            <input id="address" type="text" value="{{kafe.alamat}}" name = "alamat" />
-	            Lat: <input  type="text" name="lat" id="lat" placeholder="Latitude" value="{{kafe.lat}}" />
-	            Lng: <input  type="text" name="lng" id="lng" placeholder="Longitude" value="{{kafe.lng}}"/>
+	            Lat: <input  type="text" name="lat" id="latitude" placeholder="Latitude" value="{{kafe.lat}}" />
+	            Lng: <input  type="text" name="lng" id="longitude" placeholder="Longitude" value="{{kafe.lng}}"/>
             </td>
 		</tr>
 		<tr>
 			<td>Foto Profil Usaha Anda</td>
 			<td>:</td>
 			<img src="{{kafe.img}}"/>
-			<td><button id="addImage" name = "img" value="{{kafe.img}}">+</button></td>
+			<td>
+				<input type="file" name="img">
+				<br>{{ kafe.gambar }}
+			</td>
 		</tr>
 	</table>
 
-    <p>Pilih lokasi Anda!</p>
-    <div id="myMap"></div><br/>
+    <p>Lokasi Anda Dalam Bentuk Map</p>
+    <div id="myMap">
+    	
+    </div><br/>
 	<input type="hidden" value="{{kafe._id}}" name = "id">
-	<input type="hidden" name="_method" value="put"/>
 	<button type="submit">submit</button>
 	</form>
 </body>
