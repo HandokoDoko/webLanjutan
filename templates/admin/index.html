@@ -76,8 +76,8 @@
 							<i class="fa fa-bars"></i>
 						</a>
 						<!-- start: LOGO -->
-						<a class="navbar-brand" href="index-2.html">
-							<img src="images/logo.png" alt="TenoMed"/>
+						<a class="navbar-brand" href="/">
+							TENOMED
 						</a>
 						<!-- end: LOGO -->
 					</div>
@@ -374,7 +374,46 @@
 												</tr>
 											</thead>
 											<tbody>
+											{% for data in datas %}
 												<tr>
+													<td>{{ data.nama }}</td>
+													<td class="hidden-xs">{{ data.alamat }}</td>
+													<td>{{ data.deskripsi }}</td>
+													<td class="center">
+													<div class="visible-md visible-lg hidden-sm hidden-xs">
+														<a href="#" class="btn btn-xs btn-blue tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+														<a href="#" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Share"><i class="fa fa-share"></i></a>
+														<a href="#" class="btn btn-xs btn-red tooltips deleteKafe" id="{{ data._id }}" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+													</div>
+													<div class="visible-xs visible-sm hidden-md hidden-lg">
+														<div class="btn-group">
+															<a class="btn btn-green dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+																<i class="fa fa-cog"></i> <span class="caret"></span>
+															</a>
+															<ul role="menu" class="dropdown-menu pull-right dropdown-dark">
+																<li>
+																	<a role="menuitem" tabindex="-1" href="#">
+																		<i class="fa fa-edit"></i> Edit
+																	</a>
+																</li>
+																<li>
+																	<a role="menuitem" tabindex="-1" href="#">
+																		<i class="fa fa-share"></i> Info
+																	</a>
+																</li>
+																<li>
+																	<a role="menuitem" tabindex="-1" href="/admin:{data._id}" type="delete"> 
+																		<i class="fa fa-times deleteKafe" id="{{ data._id }}"></i> Remove
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div></td>
+												</tr>
+												{% else %}
+									            <b>Data Tidak Ada</b>
+									            {% endfor %}
+												<!-- <tr>
 													<td>KOpi Sadis</td>
 													<td class="hidden-xs">Jln. Besar Tembung</td>
 													<td>Tembung Punya</td>
@@ -514,42 +553,7 @@
 														</div>
 													</div></td>
 												</tr>
-												<tr>
-													<td>KOpi Sadis</td>
-													<td class="hidden-xs">Jln. Besar Tembung</td>
-													<td>Tembung Punya</td>
-													<td class="center">
-													<div class="visible-md visible-lg hidden-sm hidden-xs">
-														<a href="#" class="btn btn-xs btn-blue tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-														<a href="#" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Share"><i class="fa fa-share"></i></a>
-														<a href="#" class="btn btn-xs btn-red tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
-													</div>
-													<div class="visible-xs visible-sm hidden-md hidden-lg">
-														<div class="btn-group">
-															<a class="btn btn-green dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
-																<i class="fa fa-cog"></i> <span class="caret"></span>
-															</a>
-															<ul role="menu" class="dropdown-menu pull-right dropdown-dark">
-																<li>
-																	<a role="menuitem" tabindex="-1" href="#">
-																		<i class="fa fa-edit"></i> Edit
-																	</a>
-																</li>
-																<li>
-																	<a role="menuitem" tabindex="-1" href="#">
-																		<i class="fa fa-share"></i> Info
-																	</a>
-																</li>
-																<li>
-																	<a role="menuitem" tabindex="-1" href="#">
-																		<i class="fa fa-times"></i> Remove
-																	</a>
-																</li>
-															</ul>
-														</div>
-													</div></td>
-												</tr>
-												
+ -->												
 											</tbody>
 										</table>
 									</div>
@@ -564,7 +568,7 @@
 											</div>
 										</div>
 										<div id="panel_edit_account" class="tab-pane fade">
-											<form action="/admin/tambah_kafe" role="form" id="form" method="POST" , enctype="multipart/form-data">
+											<form action="/admin/tambah_kafe" role="form" id="form" method="POST">
 												<div class="row">
 													<div class="col-md-12">
 														<h3>Input data cafe</h3>
@@ -636,7 +640,7 @@
 																		<input type="file" name="gambar">
 																	</span>
 																	<a href="#" class="btn fileupload-exists btn-red" data-dismiss="fileupload">
-																		<i class="fa fa-times"></i> Remove
+																		<i class="fa fa-times" id=""></i> Remove
 																	</a>
 																</div>
 															</div>
@@ -682,7 +686,9 @@
 		<script type="text/javascript" src="plugins/jQuery/jquery-1.11.1.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
+		
 		<script src="plugins/jQuery/jquery-2.1.1.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<!--<![endif]-->
 		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
 		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -721,6 +727,7 @@
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script type="text/javascript" src="plugins/select2/select2.min.js"></script>
 		<script type="text/javascript" src="js/table-data.js"></script>
+		<script type="text/javascript" src="js/admin.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE JAVASCRIPTS  -->
 		<script src="js/main.js"></script>
