@@ -30,12 +30,16 @@
     {% endblock %}
 
     {% block nama_tempat %}
-        Kopi Sadis
+        {{ oneData.nama }}
     {% endblock %}
     
     {% block konten %}
     
     <div class="container">
+    <p>
+        <input type="text" id="lat" name="lat" value="{{ oneData.lat }}" hidden>
+        <input type="text" id="lng" name="lng" value="{{ oneData.lng }}" hidden>
+    </p>
         <div class="row">
             <div class="col-md-12">
                 <div class="row carousel-holder">
@@ -69,7 +73,7 @@
                                         <div id="pilihan">
                                             Dari :
                                             <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
-                                            <br>Ke : <b>Kopi Sadis, Medan-Tembung. Jl. Nusantara</b>
+                                            <br>Ke : <b>({{ oneData.nama }}) {{ oneData.alamat }}</b>
                                         </div>
                                     </div>
                                 </div>
@@ -106,6 +110,6 @@
     {% endblock %}
 
     {% block js %}
-<script src="js/google_maps.js"></script>
+<script src="../js/google_maps.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA&libraries=places&callback=initMap" async defer></script>
     {% endblock %}
