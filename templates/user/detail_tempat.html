@@ -1,6 +1,6 @@
 {% extends "./base_tempat.html" %}
     {% block title %}
-        Kopi Sadis
+        {{ datas[0].nama }}
     {% endblock %}
     {% block mapcss %}
     <style type="text/css">
@@ -20,7 +20,7 @@
     {% endblock %}
 
     {% block nama_tempat %}
-        Kopi Sadis
+        {{ datas[0].nama }}
     {% endblock %}
     
     {% block konten %}
@@ -56,7 +56,8 @@
 
                 <div class="panel panel-default"s>
                   <div class="panel-body">
-                    <a href="/lihat_peta" class="btn btn-primary btn-lg" style="vertical-align: center">Lihat Peta</a>
+                    <a href="/lihat_peta" class="btn btn-primary btn-lg" style="vertical-align: center">
+                        {{ datas[0].nama }}Lihat Peta</a>
                   </div>
                 </div>
 

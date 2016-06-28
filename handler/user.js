@@ -2,19 +2,21 @@ var moment = require('moment'),
 	MongoClient = require('mongodb').MongoClient,
 	mongoose=require("mongoose"),
 	Kafe = require('../model').kafe,
+	BSON = require('bson').BSONPure,
+	ObjectId = require('mongodb').ObjectId,
 	db,
 	user,
 	handler,
 	home;
 
 
-MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', (err, database) => {
+MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', function(err, database) {
   	if (err) return console.log(err)
   	db = database;
 })
 
 home = function(req, res){
-	db.collection('data').find().toArray((err, result)=>{
+	db.collection('data').find().toArray(function(err, result){
 		if(err)return console.log(err);
 		res.render('./user/home.html', {datas: result})
 	})
@@ -33,14 +35,19 @@ data_kafe = function(req, res){
 
 view_cafe = function(req, res){
 	console.log("Dapatkan 1 tempat");
-	db.collection('data').find({_id: req.params.id})
-		.toArray(function(err, result){
+	db.collection('data').findOne(
+	{
+		"_id": ObjectId(req.params.id)
+
+	},function(err, result){
 			if (err) {
 				console.log(err);
 			}else{
-				res.json(result);
+				//res.json(result);
+				res.render('./user/detail_tempat.html', {datas: result});
+				console.log(result);
 			}
-		})
+	})
 };
 
 lihat_peta = function(req, res){
