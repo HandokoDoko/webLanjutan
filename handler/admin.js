@@ -7,7 +7,7 @@ var moment = require('moment'),
 	handler;
 
 
-MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', (err, database) => {
+MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', function(err, database) {
   	if (err) return console.log(err)
   	db = database;
 })
@@ -35,7 +35,7 @@ add_kafe = function(req, res){
 		}
 	});
 
-	db.collection('data').save(req.body,(err, result) => {
+	db.collection('data').save(req.body,function(err, result) {
 		if (err) return console.log(err);
 		//renders index.ejs
 		console.log('saved to database');

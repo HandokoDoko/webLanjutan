@@ -8,13 +8,13 @@ var moment = require('moment'),
 	home;
 
 
-MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', (err, database) => {
+MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', function(err, database) {
   	if (err) return console.log(err)
   	db = database;
 })
 
 home = function(req, res){
-	db.collection('data').find().toArray((err, result)=>{
+	db.collection('data').find().toArray(function(err, result){
 		if(err)return console.log(err);
 		res.render('./user/home.html', {datas: result})
 	})
