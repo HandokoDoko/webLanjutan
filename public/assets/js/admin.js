@@ -11,12 +11,11 @@ $(".deleteKafe").click(function(){
 });
 
 $(".deleteMenu").click(function(){
-	alert("sesuatu");
 	$.ajax({
-		url: '/admin/detail/'+this.id,
+		url: '/admin/'+this.id,
 		type: 'DELETE',
 		success: function(result){
-			alert('Kafe deleted!');
+			alert('Menu deleted!');
 			location.reload();
 		}
 	});

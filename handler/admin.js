@@ -59,18 +59,16 @@ add_kafe = function(req, res){
 };
 
 var deleteKafe = function(req, res){
-	console.log(req.params.id);
-
-	db.collection('data').findOneAndDelete({ "_id" : ObjectId(req.params.id)}, (function(err, result){
+	var id = req.params.id;
+	db.collection('data').findOneAndDelete({ "_id" : ObjectId(id)}, (function(err, result){
 		if(err)return console.log(err);
 		res.sendStatus(204);
 	}))
 };
 
 var deleteMenu = function(req, res){
-	console.log(req.params.id);
-
-	db.collection('data').findOneAndDelete({ "_id" : ObjectId(req.params.id)}, (function(err, result){
+	var id = req.params.id;
+	db.collection('data').findOneAndDelete({ "_id" : ObjectId(id)}, (function(err, result){
 		if(err)return console.log(err);
 		res.sendStatus(204);
 	}))
@@ -92,9 +90,26 @@ var editKafe = function(req, res){
 	//res.sendStatus(204);
 };
 
+var editMenu = function(req, res){
+	db.collection('data').findOne(
+	{
+		"_id": ObjectId(req.params.id)
+
+	},function(err, result){
+			if (err) return res.send("Error Occurent");
+			else{
+				var data = result;
+				res.render('./admin/editMenu.html', {menu: data})
+	//			res.sendStatus(204);
+			}
+	});
+	//res.sendStatus(204);
+};
+
 var edit = function(req,res){
+	var id = req.body.id;
 	db.collection('data')
-	  .findOneAndUpdate({ "_id" : ObjectId(req.body.id)}, {
+	  .findOneAndUpdate({ "_id" : ObjectId(id)}, {
 	    $set: {
 	        nama: req.body.nama,
       		deskripsi : req.body.deskripsi,
@@ -113,10 +128,33 @@ var edit = function(req,res){
 	  })
 };
 
+var submitEdit = function(req,res){
+	var id = req.body.id;
+	var str = req.body.idKafe.toString();
+	var idKafe = str.substring(0,str.length - 1);
+	db.collection('data')
+	  .findOneAndUpdate({ "_id" : ObjectId(id)}, {
+	    $set: {
+	        namaMenu: req.body.namaMenu,
+      		hargaMenu : req.body.hargaMenu,
+      		jenisMenu : req.body.jenisMenu,
+      		gambarMenu : req.body.gambarMenu
+	    }
+	  }, {
+	    sort: {_id: -1},
+	    upsert: true
+	  }, function(err, result)  {
+	    if (err) return res.send(err);
+	    console.log(idKafe);
+	    res.redirect('/admin/detail/' + idKafe);
+	  })
+};
+
 var detailKafe = function(req, res){
+	var id = req.params.id;
 	db.collection('data').findOne(
 	{
-		"_id": ObjectId(req.params.id)
+		"_id": ObjectId(id)
 
 	},function(err, result){
 			if (err) return res.send("Error Occurent");
@@ -132,9 +170,10 @@ var detailKafe = function(req, res){
 }
 
 var addMenu = function(req,res){
+	var id = req.params.id;
 	db.collection('data').findOne(
 	{
-		"_id": ObjectId(req.params.id)
+		"_id": ObjectId(id)
 
 	},function(err, result){
 			if (err) return res.send("Error Occurent");
@@ -164,7 +203,9 @@ handler = {
 	detailKafe : detailKafe,
 	addMenu : addMenu,
 	submitMenu : submitMenu,
-	deleteMenu : deleteMenu
+	deleteMenu : deleteMenu,
+	editMenu : editMenu,
+	submitEdit : submitEdit
 };
 
 module.exports = handler;

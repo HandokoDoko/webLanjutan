@@ -15,10 +15,12 @@ router = function(app){
 	r.post('/admin/edit',auth, h.edit);
 	r.get('/admin/detail/:id',auth, h.detailKafe);
 	r.get('/admin/addMenu/:id',auth, h.addMenu);
+	r.get('/admin/editMenu/:id',auth, h.editMenu);
+	r.post('/admin/editMenu',auth,h.submitEdit);
 	r.post('/admin/submitMenu',auth, h.submitMenu);
 	r.get('/admin/edit/:id', auth, h.editKafe);
 	r.post('/admin/edit', auth, h.edit);
-	r.delete('/admin/detail/:id', auth, h.edit);
+	r.delete('/admin/detail/:id', auth, h.deleteMenu);
 	app.use(r);
 };
 module.exports = router;
