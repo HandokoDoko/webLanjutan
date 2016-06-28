@@ -1,0 +1,99 @@
+{% extends "./templating.html" %}
+
+{% block title %}TenoMed{% endblock %}
+
+{% block content %}
+<form action="/admin/edit" role="form" id="form" method="POST">
+												<div class="row">
+													<div class="col-md-12">
+														<h3>Input data cafe</h3>
+														<hr>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">
+																Nama Cafe / Usaha
+															</label>
+															<input type="text" placeholder="Nama cafe" id="nama" name="nama" class="form-control" value="{{kafe.nama}}">
+														</div>
+														<div class="form-group">
+															<label class="control-label">
+																Deskripsi Cafe
+															</label>
+															<textarea placeholder="Deskripsi Cafe" id="form-field-22" name="deskripsi" class="form-control">{{kafe.deskripsi}}</textarea>
+														</div>
+														
+													</div>
+													
+												</div>
+												<div class="row">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																Alamat
+															</label>
+															<input type="text" placeholder="Alamat" id="address" name="alamat" class="form-control" value="{{kafe.alamat}}">
+														</div>
+														
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																latitude
+															</label>
+															<input type="text" name="lat" id="latitude" placeholder="Latitude" class="form-control" value="{{kafe.lat}}">
+														</div>
+														
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label class="control-label">
+																longitude
+															</label>
+															<input type="text" name="lng" id="longitude" placeholder="Longitude" class="form-control" value="{{kafe.lng}}">
+														</div>	
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-8" >
+														<div class="form-group" id="myMap">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>
+																Image Upload
+															</label>
+															<div class="fileupload fileupload-new" data-provides="fileupload">
+																<div class="fileupload-new thumbnail"><img src="images/avatar-1-xl.jpg" alt="">
+																</div>
+																<div class="fileupload-preview fileupload-exists thumbnail"></div>
+																<div class="user-edit-image-buttons">
+																	<span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
+																		<input type="file" name="gambar">
+																	</span>
+																	<a href="#" class="btn fileupload-exists btn-red" data-dismiss="fileupload">
+																		<i class="fa fa-times" id=""></i> Remove
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												</br>
+												<div class="row">
+													<div class="col-md-8">
+														<p>
+															By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions.
+														</p>
+													</div>
+													<div class="col-md-4">
+														<button class="btn btn-green btn-block" type="submit">
+															Submit <i class="fa fa-arrow-circle-right"></i>
+														</button>
+													</div>
+												</div>
+											</form>
+{% endblock %}
