@@ -104,12 +104,57 @@ var edit = function(req,res){
 	  })
 };
 
+var detailKafe = function(req, res){
+	db.collection('data').findOne(
+	{
+		"_id": ObjectId(req.params.id)
+
+	},function(err, result){
+			if (err) return res.send("Error Occurent");
+			else{
+				var data  = result;
+				db.collection('data').find().toArray(function(err, result){
+					if(err)return console.log(err);
+					res.render('./admin/detailKafe.html', {kafe : data,datas : result})
+				})
+	//			res.sendStatus(204);
+			}
+	});
+}
+
+var addMenu = function(req,res){
+	db.collection('data').findOne(
+	{
+		"_id": ObjectId(req.params.id)
+
+	},function(err, result){
+			if (err) return res.send("Error Occurent");
+			else{
+				var data = result;
+				res.render('./admin/addMenu.html', {kafe: data})
+	//			res.sendStatus(204);
+			}
+	});
+}
+
+submitMenu = function(req, res){
+	db.collection('data').save(req.body,function(err, result) {
+		if (err) return console.log(err);
+		//renders index.ejs
+		console.log('saved to database');
+		res.redirect('/admin/detail/'+ req.body.idKafe);
+	})
+};
+
 handler = {
 	index: index,
 	add_kafe: add_kafe,
 	deleteKafe : deleteKafe,
 	editKafe : editKafe,
-	edit:edit
+	edit:edit,
+	detailKafe : detailKafe,
+	addMenu : addMenu,
+	submitMenu : submitMenu
 };
 
 module.exports = handler;

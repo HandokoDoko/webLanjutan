@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Data Kafe</title>
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA"></script>
+	<script src="js/alamat_dengan_maps.js"></script>
+	<style type="text/css">
+	#myMap{
+		height: 400px;
+		width: 50%;
+	}
+	</style>
+</head>
+<body>
+	<form action="/admin/submitMenu"  method="POST">
+	<table>
+		<tr>
+			<td>Nama Menu</td>
+			<td>:</td>
+			<td><input type="text" id="nama" name="namaMenu" placeholder="tambah menu"></td>
+		</tr>
+
+		<tr>
+			<td>Harga Menu</td>
+			<td>:</td>
+			<td><input type="text"  id="form-field-22" class="form-control" name="hargaMenu" placeholder="harga menu"/></td>
+		</tr>
+		<tr>
+			<td>Jenis</td>
+			<td>:</td>
+			<td>
+	            <input  type="text" name = "jenisMenu" placeholder="harga menu"/>
+            </td>
+		</tr>
+		<tr>
+			<td>Foto Menu</td>
+			<td>:</td>
+			<td><input type="file" name="gambarMenu" "></td>
+			
+		</tr>
+	</table>
+
+	<input type="hidden" name="idKafe" value="{{kafe._id}}">
+	<button type="submit">submit</button>
+	</form>
+</body>
+</html>

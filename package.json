@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "Tenomed",
   "version": "1.0.0",
   "description": "Tempat Nongkrong Medan",
   "main": "index.js",
@@ -12,10 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.1",
-    "bookshelf": "^0.9.5",
-    "connect-redis": "^3.0.2",
     "cookie-parser": "^1.4.2",
-    "ejs": "^2.3.4",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "knex": "^0.11.3",
@@ -27,7 +24,6 @@
     "nunjucks-date-filter": "^0.1.1",
     "passport": "^0.3.2",
     "path": "^0.12.7",
-    "sqlite3": "^3.1.4",
     "uuid": "^2.0.2"
   },
   "devDependencies": {

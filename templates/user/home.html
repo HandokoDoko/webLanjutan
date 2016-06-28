@@ -15,6 +15,7 @@
     <div class="container">
         <div class="row">
             {% for data in datas %}
+            {% if data.nama %}
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="project add-animation animation-1">
                     <a target="_blank" class="img-class" href="#">
@@ -30,6 +31,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% else %}
             <b>Data Tidak Ada</b>
             {% endfor %}
@@ -62,18 +64,17 @@
                                        <a target="_blank" href="https://twitter.com/conacelelena" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></a>                                   </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                           <div class="col-md-3">
                                 <div class="member add-animation animation-2">
-                                    <img class="img-circle" src="img/diana.png"/>
+                                    <img class="img-circle" src="img/randy.jpg"/>
                                     <div class="description">
-                                        <h3 class="big-text">Randy Muhroji </h3>
+                                        <h3 class="big-text">Randy Muhroji</h3>
                                         <br>
                                         <p class="big-text">NIM: 131111661</p>
                                     </div>
                                     <div class="social-buttons hidden-xs">
-					                   <a target="_blank" href="https://www.facebook.com/randy.muhroji" class="btn btn-social btn-facebook btn-simple"><i class="fa fa-facebook-square"></i></a>
-                                        <a target="_blank" href="https://twitter.com/eDianaCaliman" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></a>                                         
-                                    </div>
+                                       <a target="_blank" href="https://www.facebook.com/randymuhroji" class="btn btn-social btn-facebook btn-simple"><i class="fa fa-facebook-square"></i></a>
+                                       <a target="_blank" href="https://twitter.com/randymuhroji" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></a>                                   </div>
                                 </div>
                             </div>
                             <div class="col-md-3">

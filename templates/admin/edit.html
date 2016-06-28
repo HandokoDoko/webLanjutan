@@ -551,6 +551,7 @@
 			
 
 
+<<<<<<< HEAD
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="../../plugins/respond.min.js"></script>
@@ -615,4 +616,39 @@
 	<!-- end: BODY -->
 
 <!-- Mirrored from www.cliptheme.com/demo/rapido/layouts_horizontal_menu_fixed.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 13 Jan 2015 04:30:00 GMT -->
+=======
+		<tr>
+			<td>Deskripsi Cafe / Usaha</td>
+			<td>:</td>
+			<td><input type="text"  id="form-field-22" class="form-control" value="{{kafe.deskripsi}}" name="deskripsi"/>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td>:</td>
+			<td>
+	            <input id="address" type="text" value="{{kafe.alamat}}" name = "alamat" />
+	            Lat: <input  type="text" name="lat" id="latitude" placeholder="Latitude" value="{{kafe.lat}}" />
+	            Lng: <input  type="text" name="lng" id="longitude" placeholder="Longitude" value="{{kafe.lng}}"/>
+            </td>
+		</tr>
+		<tr>
+			<td>Foto Profil Usaha Anda</td>
+			<td>:</td>
+			<img src="{{kafe.img}}"/>
+			<td>
+				<input type="file" name="img">
+				<br>{{ kafe.gambar }}
+			</td>
+		</tr>
+	</table>
+
+    <p>Lokasi Anda Dalam Bentuk Map</p>
+    <div id="myMap">
+    	
+    </div><br/>
+	<input type="hidden" value="{{kafe._id}}" name = "id">
+	<button type="submit">submit</button>
+	</form>
+</body>
+>>>>>>> ddd6f00156f6ef5e29ff3503e878dd1a4e772b6d
 </html>
