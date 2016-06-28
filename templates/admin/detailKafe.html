@@ -54,6 +54,7 @@
 		<link rel="shortcut icon" href="favicon.ico" />
 		
 		<script src="../../js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../../js/admin.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyAW37jHGYhQbPOwY4aolCYQpgBak4oiGyA"></script>
 	<script src="../../js/map_edit.js"></script>
 	<style type="text/css">
@@ -329,7 +330,7 @@
 								<button data-dismiss="alert" class="close">
 									&times;
 								</button>
-								<strong>Setail data cafe back to, <a href="/admin"> HOME</a> </strong>
+								<strong>Detail data cafe back to, <a href="/admin"> HOME</a> </strong>
 							</div>
 							<div class="row">
 							<div class="col-md-12">
@@ -367,7 +368,7 @@
 										</div> 
 
 	
-										<h4>Detail Kafe {{kafe.nama}} </h4>
+										<h4>{{kafe.nama}} </h4>
 										<dl>
 											<dt>
 												Deskripsi Cafe
@@ -407,7 +408,7 @@
 													<div class="visible-md visible-lg hidden-sm hidden-xs">
 														<a href="/admin/edit/{{data._id}}" class="btn btn-xs btn-blue tooltips " data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
 														<a href="/admin/detail/{{data._id}}" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Share"><i class="fa fa-share"></i></a>
-														<a href="#" class="btn btn-xs btn-red tooltips deleteKafe" id="{{ data._id }}" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+														<a href="#" class="btn btn-xs btn-red tooltips deleteMenu" id="{{ data._id }}" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
 													</div></td>
 												</tr>
 												{% endif %}
@@ -437,6 +438,7 @@
 					<div class="subviews">
 						<div class="subviews-container"></div>
 					</div>
+
 				</div>
 				<!-- end: PAGE -->
 			</div>

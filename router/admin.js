@@ -18,6 +18,7 @@ router = function(app){
 	r.post('/admin/submitMenu',auth, h.submitMenu);
 	r.get('/admin/edit/:id', auth, h.editKafe);
 	r.post('/admin/edit', auth, h.edit);
+	r.delete('/admin/detail/:id', auth, h.edit);
 	app.use(r);
 };
 module.exports = router;

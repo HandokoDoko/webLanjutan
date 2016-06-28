@@ -67,6 +67,15 @@ var deleteKafe = function(req, res){
 	}))
 };
 
+var deleteMenu = function(req, res){
+	console.log(req.params.id);
+
+	db.collection('data').findOneAndDelete({ "_id" : ObjectId(req.params.id)}, (function(err, result){
+		if(err)return console.log(err);
+		res.sendStatus(204);
+	}))
+};
+
 var editKafe = function(req, res){
 	db.collection('data').findOne(
 	{
@@ -154,7 +163,8 @@ handler = {
 	edit:edit,
 	detailKafe : detailKafe,
 	addMenu : addMenu,
-	submitMenu : submitMenu
+	submitMenu : submitMenu,
+	deleteMenu : deleteMenu
 };
 
 module.exports = handler;
