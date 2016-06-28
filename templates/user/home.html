@@ -4,131 +4,37 @@
 
 {% block projects %}
 <div class="container">
-                    <div class="row">
-                        <div class="title add-animation">
-                            <h2>Our Popular Cafe</h2>
-                            <hr size="1">
-                            <p>Check out the most popular Cafe from our platform. We would love to hear your feedback.<br><br></p>
+    <div class="row">
+        <div class="title add-animation">
+            <h2>The Cafe's</h2>
+            <hr size="1">
+            <p>Lihat Tempat Nongkrong Favorit Kalian<br><br></p>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            {% for data in datas %}
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="project add-animation animation-1">
+                    <a target="_blank" class="img-class" href="#">
+                       <img src="img/2.jpg"/>
+                    </a>
+                    <div class="over-area over-area-sm color-1">
+                        <div class="content">
+                            <h5></h5>
+                            <h3>{{ data.nama }}</h3>
+                            <p>{{ data.deskripsi }}</p>
+                            <a href="/detail_tempat/{{ data._id }}" class="btn btn-round btn-fill">Lihat Selengkapnya</a>
                         </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="project add-animation animation-1">
-                                <a target="_blank" class="img-class" href="#">
-                                   <img src="img/2.jpg"/>
-                                </a>
-                                <div class="over-area over-area-sm color-1">
-                                    <div class="content">
-                                        <h5></h5>
-                                        <h3>Kopi Sadis</h3>
-                                        <p>Kopi Sadis memiliki beragam menu makanan dan minuman terutama Kopinya, Penasaran ? buaruan data Ke Kopi Sadis..</p>
-                                        <a href="detail_tempat" class="btn btn-round btn-fill">Lihat Selengkapnya</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="project add-animation animation-2">
-                                <a target="_blank" class="img-class" href="#">
-                                    <img src="img/1.jpg"/>
-                                </a>
-                                <div class="over-area over-area-sm color-1">
-                                    <div class="content">
-                                        <h5></h5>
-                                        <h3>Kopi Sadis</h3>
-                                        <p>Kopi Sadis memiliki beragam menu makanan dan minuman terutama Kopinya, Penasaran ? buaruan data Ke Kopi Sadis..</p>
-                                        <a href="detail_tempat" class="btn btn-round btn-fill">Lihat Selengkapnya</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="project add-animation animation-3">
-                                <a target="_blank" class="img-class" href="http://www.certivy-tim.com/product/coming-sssoon-page?ref=presentation-page">
-                                    <img src="img/3.jpg"/>
-                                </a>
-                                <div class="over-area over-area-sm color-1">
-                                    <div class="content">
-                                        <h5></h5>
-                                        <h3>Kopi Sadis</h3>
-                                        <p>Kopi Sadis memiliki beragam menu makanan dan minuman terutama Kopinya, Penasaran ? buaruan data Ke Kopi Sadis..</p>
-                                        <a href="detail_tempat" class="btn btn-round btn-fill">Lihat Selengkapnya</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="space-50"></div>
-
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="project add-animation animation-1">
-                                <a target="_blank" class="img-class" href="http://www.certivy-tim.com/product/light-bootstrap-dashboard?ref=presentation-page">
-                                    <img src="img/1.jpg">
-                                </a>
-                                <div class="over-area over-area-sm color-1">
-                                    <div class="content">
-                                        <h5></h5>
-                                        <h3>Kopi Sadis</h3>
-                                        <p>Kopi Sadis memiliki beragam menu makanan dan minuman terutama Kopinya, Penasaran ? buaruan data Ke Kopi Sadis..</p>
-                                        <a href="detail_tempat" class="btn btn-round btn-fill">Lihat Selengkapnya</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="project add-animation animation-2">
-                                <a target="_blank" class="img-class" href="http://www.certivy-tim.com/product/paper-kit?ref=presentation-page">
-                                    <img src="img/2.jpg">
-                                </a>
-                                <div class="over-area over-area-sm color-1">
-                                    <div class="content">
-                                        <h5></h5>
-                                        <h3>Kopi Sadis</h3>
-                                        <p>Kopi Sadis memiliki beragam menu makanan dan minuman terutama Kopinya, Penasaran ? buaruan data Ke Kopi Sadis..</p>
-                                        <a href="detail_tempat" class="btn btn-round btn-fill">Lihat Selengkapnya</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="project add-animation animation-3">
-                                <a target="_blank" class="img-class" href="http://www.certivy-tim.com/product/awesome-landing-page?ref=presentation-page">
-                                    <img src="img/3.jpg">
-                                </a>
-                                <div class="over-area over-area-sm color-1">
-                                    <div class="content">
-                                        <h5></h5>
-                                        <h3>Kopi Sadis</h3>
-                                        <p>Kopi Sadis memiliki beragam menu makanan dan minuman terutama Kopinya, Penasaran ? buaruan data Ke Kopi Sadis..</p>
-                                        <a href="detail_tempat" class="btn btn-round btn-fill">Lihat Selengkapnya</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
             </div>
-
-
-                    </div>
-                    
-
-                </div>
+            {% else %}
+            <b>Data Tidak Ada</b>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 
 

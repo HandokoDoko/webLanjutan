@@ -4,8 +4,10 @@ var express = require('express'),
 	router;
 
 router = function(app){
+
 	r.get('/', h.home);
-	r.get('/detail_tempat', h.detail_tempat);
+	r.get('/detail_tempat', h.data_kafe);
+	r.get('/detail_tempat/:id', h.view_cafe);
 	r.get('/lihat_peta', h.lihat_peta);
 	r.get('/login',h.login);
 
@@ -15,6 +17,11 @@ router = function(app){
 	});
 
 	r.post('/check', h.check);
+
+	r.get('/.', function(req, res){
+		res.send('404: Page not Found', 404);
+	})
+
 	app.use(r);
 };
 module.exports = router;
