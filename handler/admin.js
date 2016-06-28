@@ -13,6 +13,10 @@ MongoClient.connect('mongodb://data:12345@ds023634.mlab.com:23634/tenomed', (err
 })
 
 index = function(req, res){
+	db.collection('data').find().toArray((err, result)=>{
+		if(err)return console.log(err);
+		res.render('./admin/index.html', {datas: result})
+	})
 	res.render('./admin/index.html');
 };
 add_kafe = function(req, res){
