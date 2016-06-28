@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
+	<title> Detail kafe {{kafe.nama}}
 	</title>
 </head>
 <body>
+	<h1>Detail Kafe {{kafe.nama}}</h1>
+	<h2>{{kafe.deskripsi}}</h2>
+	<h3>{{kafe.alamat}}</h3>
+	<img src="{{kafe.gambar}}"> 
 
+	<a href="/admin/addMenu/{{kafe._id}}"> Add Menu </a><br/>
+
+	<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+											<thead>
+												<tr>
+													<th>Nama Menu</th>
+													<th class="hidden-xs">Harga</th>
+													<th>Jenis</th>
+													<th class="hidden-xs" width="120"> Action </th>
+												</tr>
+											</thead>
+											<tbody>
+											{% for data in datas %}
+												{% if data.idKafe == kafe._id %}
+												<tr>
+													<td>{{ data.namaMenu }}</td>
+													<td class="hidden-xs">{{ data.hargaMenu }}</td>
+													<td>{{ data.jenisMenu }}</td>
+													<td class="center">
+													<div class="visible-md visible-lg hidden-sm hidden-xs">
+														<a href="/admin/edit/{{data._id}}" class="btn btn-xs btn-blue tooltips " data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+														<a href="/admin/detail/{{data._id}}" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Share"><i class="fa fa-share"></i></a>
+														<a href="#" class="btn btn-xs btn-red tooltips deleteKafe" id="{{ data._id }}" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+													</div>
+													<div class="visible-xs visible-sm hidden-md hidden-lg">
+														<div class="btn-group">
+															<a class="btn btn-green dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+																<i class="fa fa-cog"></i> <span class="caret"></span>
+															</a>
+															<ul role="menu" class="dropdown-menu pull-right dropdown-dark">
+																<li>
+																	<a role="menuitem" tabindex="-1" href="#">
+																		<i class="fa fa-edit editKafe" id="{{ data._id }}></i> Edit
+																	</a>
+																</li>
+																<li>
+																	<a role="menuitem" tabindex="-1" href="#">
+																		<i class="fa fa-share"></i> Info
+																	</a>
+																</li>
+																<li>
+																	<a role="menuitem" tabindex="-1" href="/admin:{data._id}" type="delete"> 
+																		<i class="fa fa-times deleteKafe" id="{{ data._id }}"></i> Remove
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div></td>
+												</tr>
+												{% endif %}
+												{% else %}
+									            <b>Data Tidak Ada</b>
+									            {% endfor %}
 </body>
 </html>

@@ -13,6 +13,9 @@ router = function(app){
 	//r.post('/admin/tambah_kafe', auth, h.add_kafe);
 	r.get('/admin/edit/:id', h.editKafe);
 	r.post('/admin/edit',h.edit);
+	r.get('/admin/detail/:id',h.detailKafe);
+	r.get('/admin/addMenu/:id',h.addMenu);
+	r.post('/admin/submitMenu',h.submitMenu);
 	app.use(r);
 };
 module.exports = router;

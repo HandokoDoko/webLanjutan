@@ -15,6 +15,7 @@
     <div class="container">
         <div class="row">
             {% for data in datas %}
+            {% if data.nama %}
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="project add-animation animation-1">
                     <a target="_blank" class="img-class" href="#">
@@ -30,6 +31,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% else %}
             <b>Data Tidak Ada</b>
             {% endfor %}
@@ -65,7 +67,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="member add-animation animation-2">
-                                    <img class="img-circle" src="img/diana.png"/>
+                                    <img class="img-circle" src="img/randy.jpg"/>
                                     <div class="description">
                                         <h3 class="big-text">Randy Muhroji </h3>
                                         <br>
@@ -73,7 +75,7 @@
                                     </div>
                                     <div class="social-buttons hidden-xs">
 					<a target="_blank" href="https://www.facebook.com/randy.muhroji" class="btn btn-social btn-facebook btn-simple"><i class="fa fa-facebook-square"></i></a>
-                                        <a target="_blank" href="https://twitter.com/eDianaCaliman" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></a>
+                                        <a target="_blank" href="https://twitter.com/RandyMuhroji" class="btn btn-social btn-twitter btn-simple"><i class="fa fa-twitter"></i></a>
                                          <a target="_blank" href="https://www.linkedin.com/in/diana-caliman-751552b5?authType=NAME_SEARCH&amp;authToken=UNni&amp;locale=en_US&amp;trk=tyah&amp;trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A410432173%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1453464938870%2Ctas%3Adiana%20caliman" class="btn btn-social btn-linkedin btn-simple"><i class="fa fa-linkedin-square"></i></a>
                                          
                                     </div>
