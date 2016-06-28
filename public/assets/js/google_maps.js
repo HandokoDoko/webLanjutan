@@ -7,18 +7,36 @@ function initMap() {
   var origin_place_id = null;
   var destination_place_id = null;
   var travel_mode = google.maps.TravelMode.DRIVING;
-  var tujuan = new google.maps.LatLng(3.597608, 98.750229);
+  var _lat = document.getElementById("lat").value;
+  var _lng = document.getElementById("lng").value;
+  var lat_lng_tempat = new google.maps.LatLng(_lat, _lng);
+  var geocoder = new google.maps.Geocoder;
+  var g_placeId;
 
   var map = new google.maps.Map(document.getElementById("map"), {
     mapTypeControl: false,
-    center: {lat: 3.597608, lng: 98.750229},
+    center: lat_lng_tempat,
     zoom: 17
   });
 
+  geocoder.geocode({'location': lat_lng_tempat}, function(result, status){
+    if(status === google.maps.GeocoderStatus.OK){
+      if(result[1]){
+        console.log(result[1].place_id);
+        g_placeId = result[1].place_id;
+      }else{
+        window.alert('No Result');
+      }
+    }else{
+      window.alert('Geocoder :' + status);
+    }
+  });
+
   var marker = new google.maps.Marker({
-    position: {lat: 3.597608, lng: 98.750229},
+    position: lat_lng_tempat,
     title: "Kopi Sadis"
   });
+
   marker.setMap(map);
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -68,7 +86,7 @@ map.setZoom(17);
     
     pilihan.addEventListener('click', function() {
       travel_mode = mode;
-      route(origin_place_id, tujuan, travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
+      route(origin_place_id, g_placeId, travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
 
       console.log(origin_place_id + place);
     });
@@ -104,10 +122,11 @@ map.setZoom(17);
     // If the place has a geometry, store its place ID and route if we have
     // the other place ID
     origin_place_id = place.place_id;
-    route(origin_place_id, "ChIJmbe7_Mo2MTARxpIOmnPC2C0", travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
+    route(origin_place_id, g_placeId, travel_mode, directionsService, directionsDisplay, stepDisplay, map, markerArray);
     map.setZoom(17);
     marker.setMap(null);
     console.log(origin_place_id);
+    console.log(g_placeId);
     //route(origin_place_id, destination_place_id, travel_mode, directionsService, directionsDisplay);
   });
 
@@ -141,7 +160,7 @@ map.setZoom(17);
 
     directionsService.route({
       origin: {'placeId': origin_place_id},
-      destination: {'<placeI></placeI>d': destination_place_id},
+      destination: {'placeId': destination_place_id},
       travelMode: travel_mode
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
